@@ -1,12 +1,9 @@
-import { Photon } from '@prisma/photon';
-
 import createApp from './helpers/createApp';
 import usersController from './controllers/users';
 
-let photon = new Photon();
 let app = createApp();
 
-usersController(app, photon);
+usersController(app);
 
 app.use((request, response) => {
   response.status(404).json({ error: 'Not found', path: request.path });

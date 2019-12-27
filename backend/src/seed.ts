@@ -1,10 +1,8 @@
-import { Photon } from '@prisma/photon';
+import db from './helpers/db';
 import { generateHash } from './helpers/password';
 
-let photon = new Photon();
-
 async function main() {
-  await photon.users.create({
+  await db.users.create({
     data: {
       email: 'sstur@me.com',
       name: 'Simon',
@@ -20,5 +18,5 @@ main()
     console.error(e);
   })
   .finally(async () => {
-    await photon.disconnect();
+    await db.disconnect();
   });

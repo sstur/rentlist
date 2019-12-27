@@ -1,12 +1,12 @@
 import { Express } from 'express';
-import { Photon } from '@prisma/photon';
 
+import db from '../helpers/db';
 import { generateHash } from '../helpers/password';
 import { UserInput } from '../types/UserInput';
 import { BAD_REQUEST } from '../constants/response';
 import formatPhotonError from '../helpers/formatPhotonError';
 
-export default (app: Express, photon: Photon) => {
+export default (app: Express) => {
   app.post('/users', async (request, response) => {
     let data = UserInput.guard(request.body) ? request.body : null;
     if (!data) {
@@ -14,7 +14,7 @@ export default (app: Express, photon: Photon) => {
     }
     let { name, email, password } = data;
     try {
-      let result = await photon.users.create({
+      let result = await db.users.create({
         data: {
           name,
           email: email.toLowerCase(),
@@ -23,7 +23,7 @@ export default (app: Express, photon: Photon) => {
       });
       response.json({ success: true, id: result.id });
     } catch (error) {
-      // Likely the email already exists.
+      // Probably a user already exists with this email address.
       response
         .status(409)
         .json({ success: false, error: formatPhotonError(error) });
