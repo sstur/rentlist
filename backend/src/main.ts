@@ -1,8 +1,10 @@
 import createApp from './helpers/createApp';
+import authController from './controllers/auth';
 import usersController from './controllers/users';
 
 let app = createApp();
 
+authController(app);
 usersController(app);
 
 app.use((request, response) => {
