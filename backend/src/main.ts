@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { Photon } from '@prisma/photon';
+import { generateHash } from './helpers/password';
 
 let photon = new Photon();
 let app = express();
@@ -13,7 +14,11 @@ app.get('/', (request, response) => {
 app.post('/users', async (request, response) => {
   let { name, email, password } = request.body;
   let result = await photon.users.create({
-    data: { name, email, password },
+    data: {
+      name,
+      email,
+      password: await generateHash(password),
+    },
   });
   response.json(result);
 });

@@ -1,4 +1,5 @@
 import { Photon } from '@prisma/photon';
+import { generateHash } from './helpers/password';
 
 let photon = new Photon();
 
@@ -7,7 +8,7 @@ async function main() {
     data: {
       email: 'sstur@me.com',
       name: 'Simon',
-      password: '123',
+      password: await generateHash('123'),
       role: 'ADMIN',
     },
   });
