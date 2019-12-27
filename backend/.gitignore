@@ -7,3 +7,7 @@ lib/
 
 # Jest
 coverage/
+
+# Prisma
+prisma/*.db
+prisma/migrations/dev/

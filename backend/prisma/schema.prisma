@@ -1,0 +1,70 @@
+generator photon {
+  provider = "photonjs"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.db"
+}
+
+model User {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+}
+
+model VerificationToken {
+  id        String   @default(cuid()) @id
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  token     String
+  user      User
+}
+
+model Session {
+  id        String   @default(cuid()) @id
+  token     String
+  createdAt DateTime @default(now())
+  user      User
+}
+
+model Property {
+  id           String       @default(cuid()) @id
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  name         String
+  description  String
+  floorArea    String
+  price        Int
+  bedCount     Float
+  bathCount    Float
+  address      String
+  lat          Float
+  lng          Float
+  images       Image[]
+  rentalStatus RentalStatus
+  manager      User
+}
+
+model Image {
+  id  String @default(cuid()) @id
+  url String
+}
+
+enum VerificaionType {
+  PASSWORD_RESET
+}
+
+enum RentalStatus {
+  RENTED
+  AVAILABLE
+}
+
+enum Role {
+  USER
+  MANAGER
+  ADMIN
+}
