@@ -1,12 +1,5 @@
 import * as crypto from 'crypto';
-
-function randomBytes(n: number): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    crypto.randomBytes(n, (error, result) => {
-      error ? reject(error) : resolve(result);
-    });
-  });
-}
+import getRandomBytes from './getRandomBytes';
 
 function computeHash(password: string, salt: Buffer): Promise<Buffer> {
   return new Promise((resolve, reject) => {
@@ -17,7 +10,7 @@ function computeHash(password: string, salt: Buffer): Promise<Buffer> {
 }
 
 export async function generateHash(password: string) {
-  let salt = await randomBytes(18);
+  let salt = await getRandomBytes(18);
   let derivedHash = await computeHash(password, salt);
   return salt.toString('base64') + ':' + derivedHash.toString('base64');
 }
