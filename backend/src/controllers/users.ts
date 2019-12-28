@@ -41,4 +41,13 @@ export default (app: Express) => {
         .json({ success: false, error: formatPhotonError(error) });
     }
   });
+
+  app.get('/users/me', async (request, response) => {
+    let user = await authUser(request.get('X-Auth'));
+    if (user) {
+      response.json({ success: true, user });
+    } else {
+      return response.status(403).json({ error: FORBIDDEN });
+    }
+  });
 };
