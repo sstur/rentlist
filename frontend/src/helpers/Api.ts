@@ -1,5 +1,6 @@
 import * as Auth from './Auth';
 import { API_URL } from '../constants';
+import { Property } from '../types/Property';
 
 type ResultSuccess<T> = T extends undefined
   ? {
@@ -108,6 +109,24 @@ export async function logout(): Promise<Result> {
   if (response.ok) {
     await Auth.clearSessionToken();
     return { success: true };
+  } else {
+    return {
+      success: false,
+      statusCode: response.status,
+      error: data && typeof data.error === 'string' ? data.error : '',
+    };
+  }
+}
+
+export async function fetchProperties(): Promise<Result<Array<Property>>> {
+  let token = (await Auth.getSessionToken()) || '';
+  let response = await fetch(url('/properties'), {
+    headers: { 'X-Auth': token },
+  });
+  let contentType = getContentType(response);
+  let data = contentType === 'application/json' ? await response.json() : null;
+  if (response.ok && data) {
+    return { success: true, data: data.properties };
   } else {
     return {
       success: false,

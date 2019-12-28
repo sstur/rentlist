@@ -25,7 +25,11 @@ export default function MainStack(props: Props) {
     >
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
-      <Stack.Screen name="PropertyList" component={PropertyList} />
+      <Stack.Screen
+        name="PropertyList"
+        component={PropertyList}
+        options={{ title: 'Available Rentals' }}
+      />
     </Stack.Navigator>
   );
 }
