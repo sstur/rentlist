@@ -10,6 +10,30 @@ async function main() {
       role: 'ADMIN',
     },
   });
+  await db.users.create({
+    data: {
+      email: 'otis@example.com',
+      name: 'Otis Woods',
+      password: await generateHash('123'),
+      role: 'MANAGER',
+    },
+  });
+  await db.users.create({
+    data: {
+      email: 'pamela@example.com',
+      name: 'Pamela Ferrell',
+      password: await generateHash('123'),
+      role: 'MANAGER',
+    },
+  });
+  await db.users.create({
+    data: {
+      email: 'thelma@example.com',
+      name: 'Thelma Alonzo',
+      password: await generateHash('123'),
+      role: 'MANAGER',
+    },
+  });
 }
 
 main()
