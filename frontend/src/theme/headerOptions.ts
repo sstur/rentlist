@@ -1,6 +1,10 @@
 import { StackNavigationOptions } from '@react-navigation/stack';
-import { PRIMARY_COLOR, TEXT_ON_PRIMARY_COLOR } from './theme';
-import { FONT_MEDIUM } from './fonts';
+import {
+  PRIMARY_COLOR,
+  TEXT_ON_PRIMARY_COLOR,
+  FONT_MEDIUM,
+  FONT_SIZE_LARGE,
+} from './theme';
 
 const headerOptions: StackNavigationOptions = {
   headerStyle: {
@@ -8,6 +12,7 @@ const headerOptions: StackNavigationOptions = {
   },
   headerTintColor: TEXT_ON_PRIMARY_COLOR,
   headerTitleStyle: {
+    fontSize: FONT_SIZE_LARGE,
     fontFamily: FONT_MEDIUM,
   },
 };
