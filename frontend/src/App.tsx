@@ -1,19 +1,20 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { Provider as ThemeProvider, Text } from 'react-native-paper';
+import { StatusBar } from 'react-native';
+import { Provider as ThemeProvider } from 'react-native-paper';
+import { NavigationNativeContainer } from '@react-navigation/native';
 
 import theme from './theme/theme';
 import FontLoader from './components/FontLoader';
+import MainStack from './navigation/MainStack';
 
 export default function App() {
   return (
     <FontLoader>
       <ThemeProvider theme={theme}>
-        <SafeAreaView
-          style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-        >
-          <Text>Hello World</Text>
-        </SafeAreaView>
+        <StatusBar barStyle="light-content" />
+        <NavigationNativeContainer>
+          <MainStack isAuthenticated={false} />
+        </NavigationNativeContainer>
       </ThemeProvider>
     </FontLoader>
   );
