@@ -6,15 +6,20 @@ import { NavigationNativeContainer } from '@react-navigation/native';
 import theme from './theme/theme';
 import FontLoader from './components/FontLoader';
 import MainStack from './navigation/MainStack';
+import AuthenticationProvider from './components/AuthenticationProvider';
 
 export default function App() {
   return (
     <FontLoader>
       <ThemeProvider theme={theme}>
         <StatusBar barStyle="light-content" />
-        <NavigationNativeContainer>
-          <MainStack isAuthenticated={false} />
-        </NavigationNativeContainer>
+        <AuthenticationProvider>
+          {(isAuthenticated) => (
+            <NavigationNativeContainer>
+              <MainStack isAuthenticated={isAuthenticated} />
+            </NavigationNativeContainer>
+          )}
+        </AuthenticationProvider>
       </ThemeProvider>
     </FontLoader>
   );
