@@ -17,6 +17,7 @@ import {
   TextInput,
   TextInputType,
 } from '../components/core-ui';
+import * as Api from '../helpers/Api';
 
 export default function Login() {
   let navigation = useNavigation();
@@ -26,13 +27,16 @@ export default function Login() {
   let [toastMessage, setToastMessage] = useState('');
   let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
-  let onSubmit = () => {
+  let onSubmit = async () => {
     Keyboard.dismiss();
     setLoading(true);
-    setTimeout(() => {
+    let result = await Api.login({ email, password });
+    if (result.success) {
+      navigation.replace('PropertyList', {});
+    } else {
       setLoading(false);
-      setToastMessage('Login not successful');
-    }, 1200);
+      setToastMessage('Login failed');
+    }
   };
   return (
     <SafeAreaView style={styles.container}>

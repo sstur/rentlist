@@ -17,6 +17,7 @@ import {
   TextInput,
   TextInputType,
 } from '../components/core-ui';
+import * as Api from '../helpers/Api';
 
 export default function Signup() {
   let navigation = useNavigation();
@@ -27,13 +28,16 @@ export default function Signup() {
   let [name, setName] = useState('');
   let [email, setEmail] = useState('');
   let [password, setPassword] = useState('');
-  let onSubmit = () => {
+  let onSubmit = async () => {
     Keyboard.dismiss();
     setLoading(true);
-    setTimeout(() => {
+    let result = await Api.signup({ name, email, password });
+    if (result.success) {
+      navigation.replace('PropertyList', {});
+    } else {
       setLoading(false);
-      setToastMessage('Signup not successful');
-    }, 1200);
+      setToastMessage('Signup failed: ' + result.error);
+    }
   };
   return (
     <SafeAreaView style={styles.container}>
