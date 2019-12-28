@@ -1,5 +1,7 @@
+import { Role, User } from '@prisma/photon';
+
 import db from './db';
-import { Role } from '@prisma/photon';
+import getRandomBytes from './getRandomBytes';
 
 type Roles = { [K in Role]?: boolean };
 
@@ -23,4 +25,15 @@ export async function authUser(authToken: string | undefined, roles?: Roles) {
     isRolePermitted = roles[user.role] === true;
   }
   return user && isRolePermitted ? user : null;
+}
+
+export async function createSession(user: User) {
+  let bytes = await getRandomBytes(18);
+  let session = await db.sessions.create({
+    data: {
+      token: bytes.toString('base64'),
+      user: { connect: { id: user.id } },
+    },
+  });
+  return session.id + ':' + session.token;
 }

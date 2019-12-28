@@ -1,11 +1,10 @@
 import { Express } from 'express';
 
 import db from '../helpers/db';
-import { authSession } from '../helpers/auth';
+import { authSession, createSession } from '../helpers/auth';
 import { validateHash } from '../helpers/password';
 import { AuthInput } from '../types/AuthInput';
 import { BAD_REQUEST, FORBIDDEN } from '../constants/response';
-import getRandomBytes from '../helpers/getRandomBytes';
 
 export default (app: Express) => {
   app.post('/login', async (request, response) => {
@@ -19,14 +18,8 @@ export default (app: Express) => {
     if (!user || !isValid) {
       return response.status(401).json({ success: false });
     }
-    let bytes = await getRandomBytes(18);
-    let session = await db.sessions.create({
-      data: {
-        token: bytes.toString('base64'),
-        user: { connect: { id: user.id } },
-      },
-    });
-    response.json({ success: true, token: session.id + ':' + session.token });
+    let token = await createSession(user);
+    response.json({ success: true, token });
   });
 
   app.post('/logout', async (request, response) => {
