@@ -1,11 +1,11 @@
 import { API_URL } from '../constants';
 import { Result } from '../types/Result';
+import { JsonValue, JsonObject } from '../types/JsonValue';
 
 export async function fetchAndParse(
   path: string,
   options: RequestInit,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-): Promise<Result<any>> {
+): Promise<Result<JsonObject>> {
   let response;
   try {
     response = await fetch(url(path), options);
@@ -14,10 +14,10 @@ export async function fetchAndParse(
   }
   let statusCode = response.status;
   let contentType = getContentType(response);
-  let data = null;
+  let value: JsonValue = null;
   if (contentType === 'application/json') {
     try {
-      data = await response.json();
+      value = await response.json();
     } catch (error) {
       return {
         success: false,
@@ -27,15 +27,20 @@ export async function fetchAndParse(
       };
     }
   }
-  if (response.ok && data) {
-    return { success: true, data: data };
+  let data = isObject(value) ? value : { value };
+  if (response.ok) {
+    return { success: true, data };
   } else {
     return {
       success: false,
       statusCode,
-      error: data && typeof data.error === 'string' ? data.error : '',
+      error: typeof data.error === 'string' ? data.error : '',
     };
   }
+}
+
+function isObject(value: JsonValue): value is JsonObject {
+  return value != null && typeof value === 'object' && !Array.isArray(value);
 }
 
 function url(path: string) {

@@ -1,6 +1,6 @@
 import * as Auth from '../Auth';
 import { fetchAndParse } from '../fetch';
-import { Property } from '../../types/Property';
+import { PropertyArrayVal, Property } from '../../types/Property';
 import { Result } from '../../types/Result';
 
 export async function fetchProperties(): Promise<Result<Array<Property>>> {
@@ -9,7 +9,11 @@ export async function fetchProperties(): Promise<Result<Array<Property>>> {
     headers: { 'X-Auth': token },
   });
   if (result.success) {
-    return { success: true, data: result.data.properties };
+    let data = result.data;
+    let properties = PropertyArrayVal.guard(data.properties)
+      ? data.properties
+      : [];
+    return { success: true, data: properties };
   } else {
     return result;
   }
