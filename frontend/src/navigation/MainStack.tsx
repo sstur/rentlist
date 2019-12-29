@@ -7,6 +7,7 @@ import headerOptions from '../theme/headerOptions';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import PropertyList from '../screens/PropertyList';
+import PropertyDetails from '../screens/PropertyDetails';
 import { RootParamList } from '../types/Navigation';
 
 let Stack = createStackNavigator<RootParamList>();
@@ -30,6 +31,14 @@ export default function MainStack(props: Props) {
         name="PropertyList"
         component={PropertyList}
         options={{ title: 'Available Rentals' }}
+      />
+      <Stack.Screen
+        name="PropertyDetails"
+        component={PropertyDetails}
+        options={{
+          title: 'Rental Details',
+          headerBackTitleVisible: false,
+        }}
       />
     </Stack.Navigator>
   );

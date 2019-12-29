@@ -1,17 +1,22 @@
 import React, { useCallback } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Text, Button } from '../components/core-ui';
 import { useFetch } from '../state/propertyList';
 import PropertyListItem from '../components/PropertyListItem';
 import { Property } from '../types/Property';
+import { NavigationProp } from '../types/Navigation';
 
 export default function PropertyList() {
   let { state, refresh } = useFetch();
-  let onItemPress = useCallback((property: Property) => {
-    // eslint-disable-next-line no-console
-    console.log('Selected:', property);
-  }, []);
+  let navigation = useNavigation<NavigationProp<'PropertyList'>>();
+  let onItemPress = useCallback(
+    (property: Property) => {
+      navigation.navigate('PropertyDetails', { property });
+    },
+    [navigation],
+  );
   let { isLoading, error, data } = state;
   if (error) {
     return (
