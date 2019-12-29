@@ -28,6 +28,7 @@ let PropertyVal = Record({
   lng: Number,
   rentalStatus: Union(Literal('RENTED'), Literal('AVAILABLE')),
   images: Array(ImageVal),
+  manager: Record({ name: String, email: String }),
 });
 
 let PropertyArrayVal = Array(PropertyVal);

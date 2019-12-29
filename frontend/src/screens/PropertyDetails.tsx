@@ -1,8 +1,9 @@
 import React from 'react';
+import { Linking } from 'expo';
 import { useRoute } from '@react-navigation/native';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, Alert } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-import { Text, FixedRatioImage } from '../components/core-ui';
+import { Text, FixedRatioImage, Link } from '../components/core-ui';
 import { RouteProp } from '../types/Navigation';
 import {
   FONT_SIZE_SMALL,
@@ -11,6 +12,7 @@ import {
   FONT_SIZE_LARGE,
 } from '../theme/theme';
 import formatPrice from '../helpers/formatPrice';
+import { Property } from '../types/Property';
 
 export default function PropertyDetails() {
   let route = useRoute<RouteProp<'PropertyDetails'>>();
@@ -48,8 +50,35 @@ export default function PropertyDetails() {
         <Text style={styles.sectionValue}>
           {new Date(property.createdAt).toLocaleDateString()}
         </Text>
+        <Text style={styles.sectionTitle}>Contact Realtor</Text>
+        <View style={styles.sectionValue}>
+          <Text>{property.manager.name}</Text>
+          <Link onPress={() => contactRealtor(property)}>
+            {property.manager.email}
+          </Link>
+        </View>
       </View>
     </ScrollView>
+  );
+}
+
+function contactRealtor(property: Property) {
+  Alert.alert(
+    'Contact Realtor',
+    'Press OK to contact this realtor by email. This will open your default mail app.',
+    [
+      { text: 'Cancel' },
+      {
+        text: 'OK',
+        onPress: async () => {
+          try {
+            await Linking.openURL(`mailto:${property.manager.email}`);
+          } catch (e) {
+            Alert.alert('Unable to open mail app.');
+          }
+        },
+      },
+    ],
   );
 }
 
