@@ -10,7 +10,6 @@ import { useNavigation } from '@react-navigation/core';
 
 import {
   Button,
-  Headline,
   Link,
   Snackbar,
   Text,
@@ -45,7 +44,6 @@ export default function Signup() {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View style={styles.containerInner}>
           <View style={styles.form}>
-            <Headline style={styles.headline}>Sign Up</Headline>
             <View style={styles.description}>
               <Text>
                 Already have an account?{' '}
@@ -122,14 +120,9 @@ let styles = StyleSheet.create({
   containerInner: {
     flex: 1,
   },
-  headline: {
-    textAlign: 'center',
-    marginTop: 30,
-    marginBottom: 20,
-  },
   description: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginVertical: 20,
   },
   form: {
     flex: 1,

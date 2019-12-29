@@ -25,8 +25,16 @@ export default function MainStack(props: Props) {
         ...headerOptions,
       }}
     >
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ title: 'Log in' }}
+      />
+      <Stack.Screen
+        name="Signup"
+        component={Signup}
+        options={{ title: 'Sign up' }}
+      />
       <Stack.Screen
         name="PropertyList"
         component={PropertyList}
