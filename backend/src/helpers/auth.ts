@@ -12,7 +12,20 @@ export async function authSession(authToken: string | undefined) {
   }
   let session = await db.sessions.findOne({
     where: { id: sessionID },
-    include: { user: true },
+    select: {
+      id: true,
+      token: true,
+      createdAt: true,
+      user: {
+        select: {
+          id: true,
+          createdAt: true,
+          name: true,
+          email: true,
+          role: true,
+        },
+      },
+    },
   });
   return session && session.token === sessionToken ? session : null;
 }

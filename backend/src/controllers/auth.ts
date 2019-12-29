@@ -19,7 +19,9 @@ export default (app: Express) => {
       return response.status(401).json({ success: false });
     }
     let token = await createSession(user);
-    response.json({ success: true, token });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { password: _, ...safeUserDetails } = user;
+    response.json({ success: true, token, user: safeUserDetails });
   });
 
   app.post('/logout', async (request, response) => {

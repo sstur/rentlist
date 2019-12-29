@@ -7,6 +7,7 @@ export async function logout(): Promise<Result> {
   if (token == null) {
     return { success: true };
   }
+  await Auth.clearSessionToken();
   let result = await fetchAndParse('/logout', {
     method: 'POST',
     headers: {
@@ -16,7 +17,6 @@ export async function logout(): Promise<Result> {
     body: JSON.stringify({}),
   });
   if (result.success) {
-    await Auth.clearSessionToken();
     return { success: true };
   } else {
     return result;

@@ -1,22 +1,58 @@
-import { useEffect, useState, ReactElement } from 'react';
+import React, {
+  useEffect,
+  useState,
+  ReactElement,
+  createContext,
+  useMemo,
+  useContext,
+} from 'react';
 import * as Api from '../helpers/Api';
+import { User } from '../types/User';
 
 type Props = {
-  children: (isAuthenticated: boolean) => ReactElement;
+  children: ReactElement;
 };
 
+type ContextType = {
+  logout: () => void;
+  currentUser: User | null;
+  setCurrentUser: (user: User | null) => void;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let Context = createContext<ContextType>(null as any);
+
 function AuthenticationProvider(props: Props) {
-  let [authStatus, setAuthStatus] = useState<boolean | null>(null);
+  let [isLoading, setLoading] = useState(true);
+  let [currentUser, setCurrentUser] = useState<User | null>(null);
   useEffect(() => {
-    Api.checkAuth().then((result) => {
-      setAuthStatus(result.success);
+    Api.getCurrentUser().then((result) => {
+      setCurrentUser(result.success ? result.data : null);
+      setLoading(false);
     });
   }, []);
-  if (authStatus == null) {
+  let context = useMemo(
+    () => ({
+      logout: () => {
+        Api.logout();
+        setCurrentUser(null);
+      },
+      setCurrentUser,
+      currentUser,
+    }),
+    [currentUser],
+  );
+  if (isLoading) {
     return null;
   } else {
-    return props.children(authStatus);
+    return (
+      <Context.Provider value={context}>{props.children}</Context.Provider>
+    );
   }
+}
+
+export function useAuth() {
+  return useContext(Context);
 }
 
 export default AuthenticationProvider;

@@ -33,7 +33,9 @@ export default (app: Express) => {
         },
       });
       let token = await createSession(user);
-      response.json({ success: true, token });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      let { password: _, ...safeUserDetails } = user;
+      response.json({ success: true, token, user: safeUserDetails });
     } catch (error) {
       // Probably a user already exists with this email address.
       response

@@ -18,8 +18,10 @@ import {
 } from '../components/core-ui';
 import * as Api from '../helpers/Api';
 import { NavigationProp } from '../types/Navigation';
+import { useAuth } from '../components/AuthenticationProvider';
 
 export default function Signup() {
+  let { setCurrentUser } = useAuth();
   let navigation = useNavigation<NavigationProp<'Signup'>>();
   let emailRef = useRef<TextInputType>(null);
   let passwordRef = useRef<TextInputType>(null);
@@ -33,6 +35,7 @@ export default function Signup() {
     setLoading(true);
     let result = await Api.signup({ name, email, password });
     if (result.success) {
+      setCurrentUser(result.data);
       navigation.replace('PropertyList');
     } else {
       setLoading(false);
