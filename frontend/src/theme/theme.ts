@@ -13,6 +13,7 @@ export { FONT_BOLD, FONT_MEDIUM, FONT_REGULAR, FONT_LIGHT, FONT_THIN };
 export const FONT_SIZE_LARGE = 18;
 export const FONT_SIZE_NORMAL = 16;
 export const FONT_SIZE_SMALL = 14;
+export const FONT_SIZE_XSMALL = 12;
 
 export const TEXT_ON_PRIMARY_COLOR = 'white';
 export const PRIMARY_COLOR = '#5458E1';
