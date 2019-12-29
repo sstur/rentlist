@@ -12,13 +12,15 @@ type ResultSuccess<T> = T extends undefined
       data: T;
     };
 
-type ResultFailure<T> = {
+type ResultFailure = {
   success: false;
   statusCode?: number;
+  // In theory we should present a "retry" option for network errors.
+  networkError?: true;
   error: string;
 };
 
-type Result<T = undefined> = ResultSuccess<T> | ResultFailure<T>;
+type Result<T = undefined> = ResultSuccess<T> | ResultFailure;
 
 type SignupInput = {
   name: string;
@@ -27,20 +29,18 @@ type SignupInput = {
 };
 
 export async function signup(params: SignupInput): Promise<Result> {
-  let response = await fetch(url('/users'), {
+  let result = await fetchAndParse('/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(params),
   });
-  let contentType = getContentType(response);
-  let data = contentType === 'application/json' ? await response.json() : null;
-  if (response.ok) {
+  if (result.success) {
+    let data = result.data;
     let sessionToken = data && typeof data.token === 'string' ? data.token : '';
     await Auth.setSessionToken(sessionToken);
     return { success: true };
   } else {
-    let error = typeof data.error === 'string' ? data.error : '';
-    return { success: false, statusCode: response.status, error };
+    return result;
   }
 }
 
@@ -50,20 +50,18 @@ type LoginInput = {
 };
 
 export async function login(params: LoginInput): Promise<Result> {
-  let response = await fetch(url('/login'), {
+  let result = await fetchAndParse('/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(params),
   });
-  let contentType = getContentType(response);
-  let data = contentType === 'application/json' ? await response.json() : null;
-  if (response.ok) {
+  if (result.success) {
+    let data = result.data;
     let sessionToken = data && typeof data.token === 'string' ? data.token : '';
     await Auth.setSessionToken(sessionToken);
     return { success: true };
   } else {
-    let error = typeof data.error === 'string' ? data.error : '';
-    return { success: false, statusCode: response.status, error };
+    return result;
   }
 }
 
@@ -75,19 +73,13 @@ export async function checkAuth(): Promise<Result> {
       error: 'No session token available',
     };
   }
-  let response = await fetch(url('/users/me'), {
+  let result = await fetchAndParse('/users/me', {
     headers: { 'X-Auth': token },
   });
-  let contentType = getContentType(response);
-  let data = contentType === 'application/json' ? await response.json() : null;
-  if (response.ok) {
+  if (result.success) {
     return { success: true };
   } else {
-    return {
-      success: false,
-      statusCode: response.status,
-      error: data && typeof data.error === 'string' ? data.error : '',
-    };
+    return result;
   }
 }
 
@@ -96,7 +88,7 @@ export async function logout(): Promise<Result> {
   if (token == null) {
     return { success: true };
   }
-  let response = await fetch(url('/logout'), {
+  let result = await fetchAndParse('/logout', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -104,33 +96,58 @@ export async function logout(): Promise<Result> {
     },
     body: JSON.stringify({}),
   });
-  let contentType = getContentType(response);
-  let data = contentType === 'application/json' ? await response.json() : null;
-  if (response.ok) {
+  if (result.success) {
     await Auth.clearSessionToken();
     return { success: true };
   } else {
-    return {
-      success: false,
-      statusCode: response.status,
-      error: data && typeof data.error === 'string' ? data.error : '',
-    };
+    return result;
   }
 }
 
 export async function fetchProperties(): Promise<Result<Array<Property>>> {
   let token = (await Auth.getSessionToken()) || '';
-  let response = await fetch(url('/properties'), {
+  let result = await fetchAndParse('/properties', {
     headers: { 'X-Auth': token },
   });
+  if (result.success) {
+    return { success: true, data: result.data.properties };
+  } else {
+    return result;
+  }
+}
+
+async function fetchAndParse(
+  path: string,
+  options: RequestInit,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<Result<any>> {
+  let response;
+  try {
+    response = await fetch(url(path), options);
+  } catch (error) {
+    return { success: false, error: error.message, networkError: true };
+  }
+  let statusCode = response.status;
   let contentType = getContentType(response);
-  let data = contentType === 'application/json' ? await response.json() : null;
+  let data = null;
+  if (contentType === 'application/json') {
+    try {
+      data = await response.json();
+    } catch (error) {
+      return {
+        success: false,
+        statusCode,
+        error: error.message,
+        networkError: true,
+      };
+    }
+  }
   if (response.ok && data) {
-    return { success: true, data: data.properties };
+    return { success: true, data: data };
   } else {
     return {
       success: false,
-      statusCode: response.status,
+      statusCode,
       error: data && typeof data.error === 'string' ? data.error : '',
     };
   }
