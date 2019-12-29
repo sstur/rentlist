@@ -7,8 +7,9 @@ import headerOptions from '../theme/headerOptions';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import PropertyList from '../screens/PropertyList';
+import { RootParamList } from '../types/Navigation';
 
-let Stack = createStackNavigator();
+let Stack = createStackNavigator<RootParamList>();
 
 type Props = {
   isAuthenticated: boolean;

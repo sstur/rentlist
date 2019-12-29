@@ -18,9 +18,10 @@ import {
   TextInputType,
 } from '../components/core-ui';
 import * as Api from '../helpers/Api';
+import { NavigationProp } from '../types/Navigation';
 
 export default function Login() {
-  let navigation = useNavigation();
+  let navigation = useNavigation<NavigationProp<'Login'>>();
   let emailRef = useRef<TextInputType>(null);
   let passwordRef = useRef<TextInputType>(null);
   let [isLoading, setLoading] = useState(false);
@@ -32,7 +33,7 @@ export default function Login() {
     setLoading(true);
     let result = await Api.login({ email, password });
     if (result.success) {
-      navigation.replace('PropertyList', {});
+      navigation.replace('PropertyList');
     } else {
       setLoading(false);
       setToastMessage('Login failed');
@@ -49,7 +50,7 @@ export default function Login() {
                 {`Don't have an account? `}
                 <Link
                   onPress={() => {
-                    navigation.replace('Signup', {});
+                    navigation.replace('Signup');
                   }}
                 >
                   Sign up

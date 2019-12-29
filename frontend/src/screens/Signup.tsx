@@ -18,9 +18,10 @@ import {
   TextInputType,
 } from '../components/core-ui';
 import * as Api from '../helpers/Api';
+import { NavigationProp } from '../types/Navigation';
 
 export default function Signup() {
-  let navigation = useNavigation();
+  let navigation = useNavigation<NavigationProp<'Signup'>>();
   let emailRef = useRef<TextInputType>(null);
   let passwordRef = useRef<TextInputType>(null);
   let [isLoading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ export default function Signup() {
     setLoading(true);
     let result = await Api.signup({ name, email, password });
     if (result.success) {
-      navigation.replace('PropertyList', {});
+      navigation.replace('PropertyList');
     } else {
       setLoading(false);
       setToastMessage('Signup failed: ' + result.error);
@@ -50,7 +51,7 @@ export default function Signup() {
                 Already have an account?{' '}
                 <Link
                   onPress={() => {
-                    navigation.replace('Login', {});
+                    navigation.replace('Login');
                   }}
                 >
                   Log in
