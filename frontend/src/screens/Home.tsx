@@ -8,9 +8,9 @@ import PropertyListItem from '../components/PropertyListItem';
 import { Property } from '../types/Property';
 import { NavigationProp } from '../types/Navigation';
 
-export default function PropertyList() {
+export default function Home() {
   let { state, refresh } = useFetch();
-  let navigation = useNavigation<NavigationProp<'PropertyList'>>();
+  let navigation = useNavigation<NavigationProp<'Home'>>();
   let onItemPress = useCallback(
     (property: Property) => {
       navigation.navigate('PropertyDetails', { property });

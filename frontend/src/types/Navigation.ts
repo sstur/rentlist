@@ -16,6 +16,6 @@ export type RouteProp<T extends keyof RootParamList> = RoutePropBase<
 export type RootParamList = {
   Login: undefined;
   Signup: undefined;
-  PropertyList: undefined;
+  Home: undefined;
   PropertyDetails: { property: Property };
 };

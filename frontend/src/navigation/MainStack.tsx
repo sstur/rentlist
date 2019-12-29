@@ -6,7 +6,7 @@ import headerOptions from '../theme/headerOptions';
 
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
-import PropertyList from '../screens/PropertyList';
+import Home from '../screens/Home';
 import PropertyDetails from '../screens/PropertyDetails';
 import DrawerButton from '../components/DrawerButton';
 import { RootParamList } from '../types/Navigation';
@@ -19,7 +19,7 @@ export default function MainStack() {
   let isAuthenticated = currentUser != null;
   return (
     <Stack.Navigator
-      initialRouteName={isAuthenticated ? 'PropertyList' : 'Login'}
+      initialRouteName={isAuthenticated ? 'Home' : 'Login'}
       screenOptions={{
         title: APP_TITLE,
         ...headerOptions,
@@ -36,8 +36,8 @@ export default function MainStack() {
         options={{ title: 'Sign up' }}
       />
       <Stack.Screen
-        name="PropertyList"
-        component={PropertyList}
+        name="Home"
+        component={Home}
         options={{
           title: 'Available Rentals',
           headerLeft: () => <DrawerButton />,

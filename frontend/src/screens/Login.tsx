@@ -35,7 +35,7 @@ export default function Login() {
     let result = await Api.login({ email, password });
     if (result.success) {
       setCurrentUser(result.data);
-      navigation.replace('PropertyList');
+      navigation.replace('Home');
     } else {
       setLoading(false);
       setToastMessage('Login failed');

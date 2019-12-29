@@ -36,7 +36,7 @@ export default function Signup() {
     let result = await Api.signup({ name, email, password });
     if (result.success) {
       setCurrentUser(result.data);
-      navigation.replace('PropertyList');
+      navigation.replace('Home');
     } else {
       setLoading(false);
       setToastMessage('Signup failed: ' + result.error);
