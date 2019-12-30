@@ -1,7 +1,8 @@
 import { RouteProp as RoutePropBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { Property } from '../types/Property';
+import { Property } from './Property';
+import { User } from './User';
 
 export type NavigationProp<T extends keyof RootParamList> = StackNavigationProp<
   RootParamList,
@@ -19,4 +20,6 @@ export type RootParamList = {
   Home: undefined;
   PropertyDetails: { property: Property };
   UserList: undefined;
+  UserDetails: { user: User };
+  UserCreate: undefined;
 };

@@ -7,6 +7,7 @@ export {
   Snackbar,
 } from 'react-native-paper';
 export * from './Button';
+export * from './Dropdown';
 export * from './FixedRatioImage';
 export * from './Link';
 export * from './Text';

@@ -15,7 +15,9 @@ export default function UserList() {
     headerRight: () => (
       <IconButton
         icon={() => <Icon name="plus" size={28} color="white" />}
-        onPress={() => {}}
+        onPress={() => {
+          navigation.navigate('UserCreate');
+        }}
       />
     ),
   });
@@ -48,7 +50,9 @@ export default function UserList() {
           title={user.name}
           description={user.email}
           right={() => <List.Icon icon="chevron-right" />}
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate('UserDetails', { user });
+          }}
         />
       )}
     />

@@ -10,9 +10,25 @@ let UserVal = Record({
   role: UserRoleVal,
 });
 
+let UserInputVal = Record({
+  name: String,
+  email: String,
+  password: String,
+  role: UserRoleVal,
+});
+
 let UserArrayVal = Array(UserVal);
 
 type UserRole = Static<typeof UserRoleVal>;
 type User = Static<typeof UserVal>;
+type UserInput = Static<typeof UserInputVal>;
 
-export { UserVal, UserRoleVal, UserArrayVal, User, UserRole };
+export {
+  UserVal,
+  UserInputVal,
+  UserRoleVal,
+  UserArrayVal,
+  User,
+  UserInput,
+  UserRole,
+};

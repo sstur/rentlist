@@ -9,6 +9,8 @@ import Signup from '../screens/Signup';
 import Home from '../screens/Home';
 import PropertyDetails from '../screens/PropertyDetails';
 import UserList from '../screens/UserList';
+import UserDetails from '../screens/UserDetails';
+import UserCreate from '../screens/UserCreate';
 
 import DrawerButton from '../components/DrawerButton';
 import { RootParamList } from '../types/Navigation';
@@ -59,6 +61,22 @@ export default function MainStack() {
         options={{
           title: 'Users',
           headerLeft: () => <DrawerButton />,
+        }}
+      />
+      <Stack.Screen
+        name="UserDetails"
+        component={UserDetails}
+        options={({ route }) => ({
+          title: route.params.user.name,
+          headerBackTitleVisible: false,
+        })}
+      />
+      <Stack.Screen
+        name="UserCreate"
+        component={UserCreate}
+        options={{
+          title: 'Create User',
+          headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>
