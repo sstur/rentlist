@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FAB } from 'react-native-paper';
@@ -28,12 +28,9 @@ export default function Home() {
       />
     ),
   });
-  let onItemPress = useCallback(
-    (property: Property) => {
-      navigation.navigate('PropertyDetails', { property });
-    },
-    [navigation],
-  );
+  let onItemPress = (property: Property) => {
+    navigation.navigate('PropertyDetails', { property, refresh });
+  };
   let { isLoading, error, data } = state;
   if (error) {
     return (

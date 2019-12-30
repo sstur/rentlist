@@ -1,10 +1,10 @@
 import React from 'react';
 import { Linking } from 'expo';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { View, StyleSheet, ScrollView, Alert } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-import { Text, FixedRatioImage, Link } from '../components/core-ui';
-import { RouteProp } from '../types/Navigation';
+import { Text, FixedRatioImage, Link, Button } from '../components/core-ui';
+import { RouteProp, NavigationProp } from '../types/Navigation';
 import {
   FONT_SIZE_SMALL,
   PRIMARY_COLOR,
@@ -13,10 +13,13 @@ import {
 } from '../theme/theme';
 import formatPrice from '../helpers/formatPrice';
 import { Property } from '../types/Property';
+import { useAuth } from '../components/AuthenticationProvider';
 
 export default function PropertyDetails() {
+  let { currentUser } = useAuth();
+  let navigation = useNavigation<NavigationProp<'PropertyDetails'>>();
   let route = useRoute<RouteProp<'PropertyDetails'>>();
-  let { property } = route.params;
+  let { property, refresh } = route.params;
   let image = property.images.length ? property.images[0] : null;
   let defaultDescription = '(no description)';
   return (
@@ -57,6 +60,21 @@ export default function PropertyDetails() {
             {property.manager.email}
           </Link>
         </View>
+        {currentUser && currentUser.role !== 'USER' ? (
+          <Button
+            style={{
+              marginTop: 20,
+            }}
+            onPress={() => {
+              navigation.navigate('PropertyEdit', {
+                property,
+                onComplete: refresh,
+              });
+            }}
+          >
+            Edit
+          </Button>
+        ) : null}
       </View>
     </ScrollView>
   );

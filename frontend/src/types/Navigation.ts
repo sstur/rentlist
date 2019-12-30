@@ -18,8 +18,9 @@ export type RootParamList = {
   Login: undefined;
   Signup: undefined;
   Home: undefined;
-  PropertyDetails: { property: Property };
+  PropertyDetails: { property: Property; refresh: () => void };
   PropertyCreate: { onComplete: () => void };
+  PropertyEdit: { property: Property; onComplete: () => void };
   UserList: undefined;
   UserDetails: { user: User };
   UserCreate: undefined;
