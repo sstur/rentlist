@@ -1,4 +1,4 @@
-import { Literal, Record, Static, String, Union } from 'runtypes';
+import { Array, Literal, Record, Static, String, Union } from 'runtypes';
 
 let UserRoleVal = Union(Literal('USER'), Literal('MANAGER'), Literal('ADMIN'));
 
@@ -10,7 +10,9 @@ let UserVal = Record({
   role: UserRoleVal,
 });
 
+let UserArrayVal = Array(UserVal);
+
 type UserRole = Static<typeof UserRoleVal>;
 type User = Static<typeof UserVal>;
 
-export { UserVal, User, UserRoleVal, UserRole };
+export { UserVal, UserRoleVal, UserArrayVal, User, UserRole };

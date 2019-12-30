@@ -18,4 +18,5 @@ export type RootParamList = {
   Signup: undefined;
   Home: undefined;
   PropertyDetails: { property: Property };
+  UserList: undefined;
 };

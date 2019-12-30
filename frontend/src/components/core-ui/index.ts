@@ -1,7 +1,9 @@
 export {
   // These components are unchanged from RN Paper
   ActivityIndicator,
-  Headline,
+  Avatar,
+  IconButton,
+  List,
   Snackbar,
 } from 'react-native-paper';
 export * from './Button';

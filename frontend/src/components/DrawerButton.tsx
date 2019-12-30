@@ -7,7 +7,7 @@ export default function DrawerButton() {
   let { openDrawer } = useDrawer();
   return (
     <IconButton
-      icon={() => <Icon name="menu" size={30} color="white" />}
+      icon={() => <Icon name="menu" size={28} color="white" />}
       onPress={() => {
         openDrawer();
       }}

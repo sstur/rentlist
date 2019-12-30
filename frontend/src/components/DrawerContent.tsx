@@ -32,7 +32,9 @@ export default function DrawerContent(props: Props) {
     {
       icon: 'home-outline',
       label: 'Rental Listings',
-      onPress: () => {},
+      onPress: () => {
+        navRef.current && navRef.current.navigate('Home', undefined);
+      },
     },
     {
       icon: 'bookmark-outline',
@@ -49,7 +51,9 @@ export default function DrawerContent(props: Props) {
       icon: 'account-group-outline',
       label: 'Manage Users',
       showForRoles: ['ADMIN'],
-      onPress: () => {},
+      onPress: () => {
+        navRef.current && navRef.current.navigate('UserList', undefined);
+      },
     },
     {
       icon: 'account-circle-outline',

@@ -8,6 +8,8 @@ import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import Home from '../screens/Home';
 import PropertyDetails from '../screens/PropertyDetails';
+import UserList from '../screens/UserList';
+
 import DrawerButton from '../components/DrawerButton';
 import { RootParamList } from '../types/Navigation';
 import { useAuth } from '../components/AuthenticationProvider';
@@ -49,6 +51,14 @@ export default function MainStack() {
         options={{
           title: 'Rental Details',
           headerBackTitleVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="UserList"
+        component={UserList}
+        options={{
+          title: 'Users',
+          headerLeft: () => <DrawerButton />,
         }}
       />
     </Stack.Navigator>
