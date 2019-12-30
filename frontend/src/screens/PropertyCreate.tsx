@@ -12,7 +12,7 @@ import PropertyEditForm from '../components/PropertyEditForm';
 export default function PropertyCreate() {
   let navigation = useNavigation<NavigationProp<'PropertyCreate'>>();
   let route = useRoute<RouteProp<'PropertyCreate'>>();
-  let { onComplete } = route.params;
+  let { refresh } = route.params;
   let [isLoading, setLoading] = useState(false);
   let [showToast, toastRef] = useToast();
   let onSubmit = async (formData: PropertyInput) => {
@@ -20,7 +20,7 @@ export default function PropertyCreate() {
     setLoading(true);
     let result = await Api.createProperty(formData);
     if (result.success) {
-      onComplete();
+      refresh();
       navigation.navigate('Home');
     } else {
       setLoading(false);

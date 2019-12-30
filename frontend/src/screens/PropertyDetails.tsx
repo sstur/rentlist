@@ -68,7 +68,7 @@ export default function PropertyDetails() {
             onPress={() => {
               navigation.navigate('PropertyEdit', {
                 property,
-                onComplete: refresh,
+                refresh,
               });
             }}
           >

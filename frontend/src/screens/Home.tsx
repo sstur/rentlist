@@ -61,7 +61,7 @@ export default function Home() {
         icon="plus"
         onPress={() => {
           navigation.navigate('PropertyCreate', {
-            onComplete: refresh,
+            refresh,
           });
         }}
       />
