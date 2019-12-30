@@ -5,9 +5,14 @@ import { TextInput as TextInputBase } from 'react-native-paper';
 type Props = ComponentProps<typeof TextInputBase>;
 
 const TextInput = forwardRef((props: Props, ref: Ref<TextInputType>) => {
-  let { style, ...otherProps } = props;
+  let { style, multiline, ...otherProps } = props;
   return (
-    <TextInputBase ref={ref} style={[styles.input, style]} {...otherProps} />
+    <TextInputBase
+      ref={ref}
+      multiline={multiline}
+      style={[multiline ? styles.multiline : styles.input, style]}
+      {...otherProps}
+    />
   );
 });
 
@@ -15,6 +20,7 @@ let styles = StyleSheet.create({
   input: {
     height: 60,
   },
+  multiline: {},
 });
 
 export { TextInput, TextInputType };

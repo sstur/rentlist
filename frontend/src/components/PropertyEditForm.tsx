@@ -92,10 +92,6 @@ export default function PropertyEditForm(props: Props) {
             style={styles.formField}
             value={formData.description}
             onChangeText={(text) => setFormData('description', text)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
           />
           <TextInput
             label="Floor Area (square feet)"
