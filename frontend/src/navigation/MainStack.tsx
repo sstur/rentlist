@@ -10,6 +10,7 @@ import Home from '../screens/Home';
 import PropertyDetails from '../screens/PropertyDetails';
 import PropertyCreate from '../screens/PropertyCreate';
 import PropertyEdit from '../screens/PropertyEdit';
+import MyListings from '../screens/MyListings';
 import UserList from '../screens/UserList';
 import UserDetails from '../screens/UserDetails';
 import UserCreate from '../screens/UserCreate';
@@ -71,6 +72,14 @@ export default function MainStack() {
         component={PropertyEdit}
         options={{
           title: 'Edit Rental Listing',
+          headerBackTitleVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="MyListings"
+        component={MyListings}
+        options={{
+          title: 'My Listings',
           headerBackTitleVisible: false,
         }}
       />

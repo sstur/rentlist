@@ -22,7 +22,7 @@ const selectFields = {
   rentalStatus: true,
   // TODO: We really just need a way to exclude user password without
   // writing this whole massive select clause above.
-  manager: { select: { name: true, email: true } },
+  manager: { select: { id: true, name: true, email: true } },
 };
 
 export default (app: Express) => {

@@ -45,7 +45,9 @@ export default function DrawerContent(props: Props) {
       icon: 'file-document-box-outline',
       label: 'My Listings',
       showForRoles: ['MANAGER', 'ADMIN'],
-      onPress: () => {},
+      onPress: () => {
+        navRef.current && navRef.current.navigate('MyListings', undefined);
+      },
     },
     {
       icon: 'account-group-outline',

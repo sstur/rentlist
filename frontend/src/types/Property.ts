@@ -30,7 +30,7 @@ let PropertyVal = Record({
   lng: Number,
   rentalStatus: RentalStatusVal,
   images: Array(ImageVal),
-  manager: Record({ name: String, email: String }),
+  manager: Record({ id: String, name: String, email: String }),
 });
 
 let PropertyInputVal = Record({

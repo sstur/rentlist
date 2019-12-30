@@ -21,6 +21,7 @@ export type RootParamList = {
   PropertyDetails: { property: Property; refresh: () => void };
   PropertyCreate: { refresh: () => void };
   PropertyEdit: { property: Property; refresh: () => void };
+  MyListings: undefined;
   UserList: undefined;
   UserDetails: { user: User; refresh: () => void };
   MyProfile: undefined;
