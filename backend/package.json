@@ -4,6 +4,7 @@
     "start:dev": "ts-node ./src/main.ts",
     "start:watch": "ts-node-dev --no-notify --respawn --transpile-only ./src/main.ts",
     "build": "yarn generate && tsc",
+    "prisma:dev": "prisma2 dev",
     "generate": "prisma2 generate",
     "seed": "ts-node ./src/seed.ts",
     "format": "prettier --write \"src/**/*.ts\"",
