@@ -44,6 +44,24 @@ export default (app: Express) => {
     }
   });
 
+  app.get('/users', async (request, response) => {
+    let user = await authUser(request.get('X-Auth'), { ADMIN: true });
+    if (!user) {
+      return response.status(403).json({ error: FORBIDDEN });
+    }
+    let users = await db.users.findMany({
+      select: {
+        id: true,
+        createdAt: true,
+        name: true,
+        email: true,
+        role: true,
+      },
+      orderBy: { createdAt: 'desc' },
+    });
+    response.json({ success: true, users });
+  });
+
   app.get('/users/me', async (request, response) => {
     let user = await authUser(request.get('X-Auth'));
     if (user) {
