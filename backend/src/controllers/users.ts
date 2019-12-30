@@ -1,12 +1,13 @@
 import { Express } from 'express';
 
+import { User } from '@prisma/photon';
 import db from '../helpers/db';
 import { generateHash } from '../helpers/password';
 import { UserInput } from '../types/UserInput';
 import { BAD_REQUEST, FORBIDDEN } from '../constants/response';
 import formatPhotonError from '../helpers/formatPhotonError';
 import { authUser, createSession } from '../helpers/auth';
-import { User } from '@prisma/photon';
+import { validate as isEmail } from 'isemail';
 
 export default (app: Express) => {
   app.post('/users', async (request, response) => {
@@ -14,13 +15,19 @@ export default (app: Express) => {
     if (!data) {
       return response.status(400).json({ error: BAD_REQUEST });
     }
+    if (data.password.length === 0) {
+      return response.status(400).json({ error: 'Password cannot be blank' });
+    }
+    if (!isEmail(data.email)) {
+      return response.status(400).json({ error: 'Invalid Email address' });
+    }
     let { name, email, password, role } = data;
     // Only an admin can create users with the following roles.
     if (role === 'ADMIN' || role === 'MANAGER') {
-      let authenticated = await authUser(request.get('X-Auth'), {
+      let authenticatedUser = await authUser(request.get('X-Auth'), {
         ADMIN: true,
       });
-      if (!authenticated) {
+      if (!authenticatedUser) {
         return response.status(403).json({ error: FORBIDDEN });
       }
     }
@@ -51,24 +58,27 @@ export default (app: Express) => {
     if (!data) {
       return response.status(400).json({ error: BAD_REQUEST });
     }
+    if (!isEmail(data.email)) {
+      return response.status(400).json({ error: 'Invalid Email address' });
+    }
     let user = await authUser(request.get('X-Auth'));
     if (!user) {
       return response.status(403).json({ error: FORBIDDEN });
     }
-    // Only an admin can edit other users
-    if (idToEdit !== user.id && user.role !== 'ADMIN') {
-      return response.status(403).json({ error: FORBIDDEN });
-    }
-    let roleToAdd = data.role || 'USER';
-    // Only an admin can elevate a user's role
-    if (roleToAdd !== 'USER' && user.role !== 'ADMIN') {
-      return response.status(403).json({ error: FORBIDDEN });
+    if (user.role !== 'ADMIN') {
+      // Only an admin can edit other users
+      if (idToEdit !== user.id) {
+        return response.status(403).json({ error: FORBIDDEN });
+      }
     }
     let fieldsToUpdate: Partial<User> = {
       name: data.name,
       email: data.email.toLowerCase(),
-      role: roleToAdd,
     };
+    let canChangeRole = user.role === 'ADMIN';
+    if (canChangeRole && data.role) {
+      fieldsToUpdate.role = data.role;
+    }
     if (data.password) {
       fieldsToUpdate.password = await generateHash(data.password);
     }
