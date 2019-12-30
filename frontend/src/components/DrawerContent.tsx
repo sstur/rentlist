@@ -69,7 +69,12 @@ export default function DrawerContent(props: Props) {
       label: 'Logout',
       onPress: () => {
         logout();
-        navRef.current && navRef.current.replace('Login', undefined);
+        let navigation = navRef.current;
+        navigation &&
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Login' }],
+          });
       },
     },
   ];

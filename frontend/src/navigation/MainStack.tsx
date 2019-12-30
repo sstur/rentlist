@@ -56,7 +56,6 @@ export default function MainStack() {
         component={PropertyDetails}
         options={{
           title: 'Rental Details',
-          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
@@ -64,7 +63,6 @@ export default function MainStack() {
         component={PropertyCreate}
         options={{
           title: 'Add Rental Listing',
-          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
@@ -72,7 +70,6 @@ export default function MainStack() {
         component={PropertyEdit}
         options={{
           title: 'Edit Rental Listing',
-          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
@@ -80,7 +77,6 @@ export default function MainStack() {
         component={MyListings}
         options={{
           title: 'My Listings',
-          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
@@ -96,7 +92,6 @@ export default function MainStack() {
         component={UserDetails}
         options={({ route }) => ({
           title: route.params.user.name,
-          headerBackTitleVisible: false,
         })}
       />
       <Stack.Screen
@@ -104,7 +99,6 @@ export default function MainStack() {
         component={UserCreate}
         options={{
           title: 'Create User',
-          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
@@ -112,7 +106,6 @@ export default function MainStack() {
         component={MyProfile}
         options={{
           title: 'My Profile',
-          headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>

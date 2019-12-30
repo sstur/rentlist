@@ -15,6 +15,7 @@ const headerOptions: StackNavigationOptions = {
     fontSize: FONT_SIZE_LARGE,
     fontFamily: FONT_MEDIUM,
   },
+  headerBackTitleVisible: false,
 };
 
 export default headerOptions;
