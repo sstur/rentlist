@@ -45,8 +45,7 @@ export default function PropertyEditForm(props: Props) {
       bedCount,
       bathCount,
       address,
-      lat,
-      lng,
+      latLng: lat.toFixed(6) + ',' + lng.toFixed(6),
       rentalStatus,
       images: images.map(({ url }) => url)[0] || '',
     };
@@ -59,8 +58,7 @@ export default function PropertyEditForm(props: Props) {
       bedCount: 0,
       bathCount: 0,
       address: '',
-      lat: 0,
-      lng: 0,
+      latLng: '',
       rentalStatus: 'AVAILABLE',
       images: '',
     };
@@ -144,6 +142,16 @@ export default function PropertyEditForm(props: Props) {
             style={styles.formField}
             value={formData.address}
             onChangeText={(text) => setFormData('address', text)}
+            returnKeyType="done"
+            onSubmitEditing={() => {
+              Keyboard.dismiss();
+            }}
+          />
+          <TextInput
+            label="Latitude, Longitude"
+            style={styles.formField}
+            value={formData.latLng}
+            onChangeText={(text) => setFormData('latLng', text)}
             returnKeyType="done"
             onSubmitEditing={() => {
               Keyboard.dismiss();

@@ -41,8 +41,7 @@ let PropertyInputVal = Record({
   bedCount: Number,
   bathCount: Number,
   address: String,
-  lat: Number,
-  lng: Number,
+  latLng: String,
   rentalStatus: RentalStatusVal,
   images: String,
 });

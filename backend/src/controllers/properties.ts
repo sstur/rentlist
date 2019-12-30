@@ -58,11 +58,11 @@ export default (app: Express) => {
       bedCount,
       bathCount,
       address,
-      lat,
-      lng,
+      latLng,
       rentalStatus,
       images,
     } = data;
+    let [lat, lng] = parseLatLng(latLng);
     let property = await db.properties.create({
       data: {
         name,
@@ -109,11 +109,11 @@ export default (app: Express) => {
       bedCount,
       bathCount,
       address,
-      lat,
-      lng,
+      latLng,
       rentalStatus,
       images,
     } = data;
+    let [lat, lng] = parseLatLng(latLng);
     // This is suboptimal; deleting old images before adding new.
     await db.images.deleteMany({ where: { property: { id: idToEdit } } });
     let property = await db.properties.update({
@@ -154,3 +154,8 @@ export default (app: Express) => {
     response.json({ success: true });
   });
 };
+
+function parseLatLng(input: string): [number, number] {
+  let [lat, lng] = input.replace(/\s+/g, '').split(',');
+  return [isNaN(+lat) ? 0 : Number(lat), isNaN(+lng) ? 0 : Number(lng)];
+}
