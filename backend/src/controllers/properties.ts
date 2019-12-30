@@ -5,6 +5,26 @@ import { FORBIDDEN, BAD_REQUEST } from '../constants/response';
 import { authUser } from '../helpers/auth';
 import { PropertyInput } from '../types/PropertyInput';
 
+const selectFields = {
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+  name: true,
+  description: true,
+  floorArea: true,
+  price: true,
+  bedCount: true,
+  bathCount: true,
+  address: true,
+  lat: true,
+  lng: true,
+  images: true,
+  rentalStatus: true,
+  // TODO: We really just need a way to exclude user password without
+  // writing this whole massive select clause above.
+  manager: { select: { name: true, email: true } },
+};
+
 export default (app: Express) => {
   app.get('/properties', async (request, response) => {
     let user = await authUser(request.get('X-Auth'));
@@ -12,25 +32,7 @@ export default (app: Express) => {
       return response.status(403).json({ error: FORBIDDEN });
     }
     let properties = await db.properties.findMany({
-      select: {
-        id: true,
-        createdAt: true,
-        updatedAt: true,
-        name: true,
-        description: true,
-        floorArea: true,
-        price: true,
-        bedCount: true,
-        bathCount: true,
-        address: true,
-        lat: true,
-        lng: true,
-        images: true,
-        rentalStatus: true,
-        // TODO: We really just need a way to exclude user password without
-        // writing this whole massive select clause above.
-        manager: { select: { name: true, email: true } },
-      },
+      select: selectFields,
       orderBy: { createdAt: 'desc' },
     });
     response.json({ success: true, properties });
@@ -63,7 +65,7 @@ export default (app: Express) => {
         name,
         description,
         floorArea,
-        price,
+        price: price * 100,
         bedCount,
         bathCount,
         address,
@@ -78,25 +80,48 @@ export default (app: Express) => {
         },
         manager: { connect: { id: user.id } },
       },
-      select: {
-        id: true,
-        createdAt: true,
-        updatedAt: true,
-        name: true,
-        description: true,
-        floorArea: true,
-        price: true,
-        bedCount: true,
-        bathCount: true,
-        address: true,
-        lat: true,
-        lng: true,
-        images: true,
-        rentalStatus: true,
-        // TODO: We really just need a way to exclude user password without
-        // writing this whole massive select clause above.
-        manager: { select: { name: true, email: true } },
+      select: selectFields,
+    });
+    response.json({ success: true, property });
+  });
+
+  app.put('/properties/:id', async (request, response) => {
+    let idToEdit = String(request.params.id);
+    let user = await authUser(request.get('X-Auth'));
+    if (!user) {
+      return response.status(403).json({ error: FORBIDDEN });
+    }
+    let data = PropertyInput.guard(request.body) ? request.body : null;
+    if (!data) {
+      return response.status(400).json({ error: BAD_REQUEST });
+    }
+    let {
+      name,
+      description,
+      floorArea,
+      price,
+      bedCount,
+      bathCount,
+      address,
+      lat,
+      lng,
+      rentalStatus,
+    } = data;
+    let property = await db.properties.update({
+      where: { id: idToEdit },
+      data: {
+        name,
+        description,
+        floorArea,
+        price: price * 100,
+        bedCount,
+        bathCount,
+        address,
+        lat,
+        lng,
+        rentalStatus,
       },
+      select: selectFields,
     });
     response.json({ success: true, property });
   });
