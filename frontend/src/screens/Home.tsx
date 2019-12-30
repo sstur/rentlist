@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { FAB } from 'react-native-paper';
 
 import HeaderButton from '../components/HeaderButton';
 import PropertyList from '../components/PropertyList';
@@ -9,6 +10,7 @@ import { Text, Button } from '../components/core-ui';
 import { useFetch } from '../state/propertyList';
 import { Property } from '../types/Property';
 import { NavigationProp } from '../types/Navigation';
+import { PRIMARY_COLOR } from '../theme/theme';
 
 type ViewMode = 'LIST' | 'MAP';
 
@@ -50,12 +52,23 @@ export default function Home() {
       refresh={refresh}
     />
   ) : (
-    <PropertyList
-      onItemPress={onItemPress}
-      isLoading={isLoading}
-      data={data}
-      refresh={refresh}
-    />
+    <View style={{ flex: 1 }}>
+      <PropertyList
+        onItemPress={onItemPress}
+        isLoading={isLoading}
+        data={data}
+        refresh={refresh}
+      />
+      <FAB
+        style={styles.floatingActionButton}
+        icon="plus"
+        onPress={() => {
+          navigation.navigate('PropertyCreate', {
+            onComplete: refresh,
+          });
+        }}
+      />
+    </View>
   );
 }
 
@@ -65,5 +78,12 @@ let styles = StyleSheet.create({
     padding: 30,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  floatingActionButton: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+    backgroundColor: PRIMARY_COLOR,
   },
 });

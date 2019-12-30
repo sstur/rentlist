@@ -13,6 +13,8 @@ let ImageVal = Record({
   url: String,
 });
 
+let RentalStatusVal = Union(Literal('RENTED'), Literal('AVAILABLE'));
+
 let PropertyVal = Record({
   id: String,
   createdAt: String,
@@ -26,13 +28,37 @@ let PropertyVal = Record({
   address: String,
   lat: Number,
   lng: Number,
-  rentalStatus: Union(Literal('RENTED'), Literal('AVAILABLE')),
+  rentalStatus: RentalStatusVal,
   images: Array(ImageVal),
   manager: Record({ name: String, email: String }),
 });
 
+let PropertyInputVal = Record({
+  name: String,
+  description: String,
+  floorArea: String,
+  price: Number,
+  bedCount: Number,
+  bathCount: Number,
+  address: String,
+  lat: Number,
+  lng: Number,
+  rentalStatus: RentalStatusVal,
+  images: String,
+});
+
 let PropertyArrayVal = Array(PropertyVal);
 
+type RentalStatus = Static<typeof RentalStatusVal>;
 type Property = Static<typeof PropertyVal>;
+type PropertyInput = Static<typeof PropertyInputVal>;
 
-export { PropertyVal, PropertyArrayVal, Property };
+export {
+  PropertyVal,
+  PropertyInputVal,
+  PropertyArrayVal,
+  RentalStatusVal,
+  Property,
+  PropertyInput,
+  RentalStatus,
+};

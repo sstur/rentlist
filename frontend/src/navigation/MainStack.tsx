@@ -8,6 +8,7 @@ import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import Home from '../screens/Home';
 import PropertyDetails from '../screens/PropertyDetails';
+import PropertyCreate from '../screens/PropertyCreate';
 import UserList from '../screens/UserList';
 import UserDetails from '../screens/UserDetails';
 import UserCreate from '../screens/UserCreate';
@@ -52,6 +53,14 @@ export default function MainStack() {
         component={PropertyDetails}
         options={{
           title: 'Rental Details',
+          headerBackTitleVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="PropertyCreate"
+        component={PropertyCreate}
+        options={{
+          title: 'Add Rental Listing',
           headerBackTitleVisible: false,
         }}
       />
