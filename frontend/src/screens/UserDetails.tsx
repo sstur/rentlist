@@ -12,7 +12,7 @@ import UserEditForm from '../components/UserEditForm';
 export default function UserDetails() {
   let navigation = useNavigation<NavigationProp<'UserDetails'>>();
   let route = useRoute<RouteProp<'UserDetails'>>();
-  let { user } = route.params;
+  let { user, refresh } = route.params;
   let [isLoading, setLoading] = useState(false);
   let [showToast, toastRef] = useToast();
   let onSubmit = async (userData: UserInput) => {
@@ -20,6 +20,7 @@ export default function UserDetails() {
     setLoading(true);
     let result = await Api.updateUser(user.id, userData);
     if (result.success) {
+      refresh();
       navigation.navigate('UserList');
     } else {
       setLoading(false);
