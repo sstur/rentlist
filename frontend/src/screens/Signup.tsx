@@ -94,12 +94,7 @@ export default function Signup() {
               returnKeyType="go"
               onSubmitEditing={onSubmit}
             />
-            <Button
-              mode="contained"
-              loading={isLoading}
-              disabled={isLoading}
-              onPress={onSubmit}
-            >
+            <Button loading={isLoading} disabled={isLoading} onPress={onSubmit}>
               Sign Up
             </Button>
           </View>

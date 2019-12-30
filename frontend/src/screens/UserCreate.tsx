@@ -29,7 +29,7 @@ export default function UserCreate() {
   };
   return (
     <ToastProvider ref={toastRef}>
-      {() => <UserEditForm isLoading={isLoading} onSubmit={onSubmit} />}
+      <UserEditForm isLoading={isLoading} onSubmit={onSubmit} />
     </ToastProvider>
   );
 }

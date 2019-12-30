@@ -29,7 +29,7 @@ export default function PropertyCreate() {
   };
   return (
     <ToastProvider ref={toastRef}>
-      {() => <PropertyEditForm isLoading={isLoading} onSubmit={onSubmit} />}
+      <PropertyEditForm isLoading={isLoading} onSubmit={onSubmit} />
     </ToastProvider>
   );
 }

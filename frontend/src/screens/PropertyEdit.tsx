@@ -48,14 +48,12 @@ export default function PropertyEdit() {
   };
   return (
     <ToastProvider ref={toastRef}>
-      {() => (
-        <PropertyEditForm
-          property={property}
-          isLoading={isLoading}
-          onSubmit={onSubmit}
-          onDelete={onDelete}
-        />
-      )}
+      <PropertyEditForm
+        property={property}
+        isLoading={isLoading}
+        onSubmit={onSubmit}
+        onDelete={onDelete}
+      />
     </ToastProvider>
   );
 }

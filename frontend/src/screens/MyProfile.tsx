@@ -29,14 +29,12 @@ export default function UserDetails() {
   };
   return (
     <ToastProvider ref={toastRef}>
-      {() => (
-        <UserEditForm
-          user={currentUser || undefined}
-          isLoading={isLoading}
-          showRole={false}
-          onSubmit={onSubmit}
-        />
-      )}
+      <UserEditForm
+        user={currentUser || undefined}
+        isLoading={isLoading}
+        showRole={false}
+        onSubmit={onSubmit}
+      />
     </ToastProvider>
   );
 }

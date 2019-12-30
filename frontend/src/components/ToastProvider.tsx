@@ -14,7 +14,8 @@ import { Snackbar } from './core-ui';
 type ShowMessage = (message: string) => void;
 
 type Props = {
-  children: (showMessage: ShowMessage) => ReactElement;
+  render?: (showMessage: ShowMessage) => ReactElement;
+  children?: ReactElement;
 };
 
 type Handle = {
@@ -31,7 +32,7 @@ export const ToastProvider = forwardRef((props: Props, ref: Ref<Handle>) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ flex: 1 }}>
-        {props.children(setMessage)}
+        {props.render ? props.render(setMessage) : props.children}
         <Snackbar visible={message !== ''} onDismiss={() => setMessage('')}>
           {message}
         </Snackbar>
