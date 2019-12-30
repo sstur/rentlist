@@ -8,8 +8,10 @@ import { NavigationProp, RouteProp } from '../types/Navigation';
 import { useToast, ToastProvider } from '../components/ToastProvider';
 import { UserInput } from '../types/User';
 import UserEditForm from '../components/UserEditForm';
+import { useAuth } from '../components/AuthenticationProvider';
 
 export default function UserDetails() {
+  let { currentUser, setCurrentUser } = useAuth();
   let navigation = useNavigation<NavigationProp<'UserDetails'>>();
   let route = useRoute<RouteProp<'UserDetails'>>();
   let { user, refresh } = route.params;
@@ -21,6 +23,9 @@ export default function UserDetails() {
     let result = await Api.updateUser(user.id, userData);
     if (result.success) {
       refresh();
+      if (currentUser && currentUser.id === user.id) {
+        setCurrentUser(result.data);
+      }
       navigation.navigate('UserList');
     } else {
       setLoading(false);
