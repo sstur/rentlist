@@ -2,6 +2,7 @@ export * from './checkAuth';
 export * from './fetchProperties';
 export * from './createProperty';
 export * from './updateProperty';
+export * from './deleteProperty';
 export * from './fetchUsers';
 export * from './getCurrentUser';
 export * from './login';

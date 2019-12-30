@@ -125,4 +125,14 @@ export default (app: Express) => {
     });
     response.json({ success: true, property });
   });
+
+  app.delete('/properties/:id', async (request, response) => {
+    let id = String(request.params.id);
+    let user = await authUser(request.get('X-Auth'));
+    if (!user) {
+      return response.status(403).json({ error: FORBIDDEN });
+    }
+    await db.properties.delete({ where: { id } });
+    response.json({ success: true });
+  });
 };
