@@ -58,7 +58,9 @@ export default function DrawerContent(props: Props) {
     {
       icon: 'account-circle-outline',
       label: 'My Profile',
-      onPress: () => {},
+      onPress: () => {
+        navRef.current && navRef.current.navigate('MyProfile', undefined);
+      },
     },
     {
       icon: 'logout-variant',

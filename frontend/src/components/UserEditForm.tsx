@@ -16,12 +16,13 @@ import { roleToLabel, userRoles } from '../helpers/userRoles';
 type Props = {
   user?: User;
   isLoading: boolean;
+  showRole?: boolean;
   onSubmit: (data: UserInput) => void;
   onDelete?: () => void;
 };
 
 export default function UserEditForm(props: Props) {
-  let { user, isLoading, onSubmit, onDelete } = props;
+  let { user, isLoading, showRole, onSubmit, onDelete } = props;
   let initialData: UserInput;
   if (user) {
     let { name, email, role } = user;
@@ -78,16 +79,18 @@ export default function UserEditForm(props: Props) {
             returnKeyType="go"
             onSubmitEditing={submitHandler}
           />
-          <Dropdown
-            label="Role"
-            values={userRoles}
-            selectedValue={userData.role}
-            keyExtractor={(role) => role}
-            titleExtractor={(role) => roleToLabel(role)}
-            onSelect={(role) => setUserData('role', role)}
-            onShow={() => Keyboard.dismiss()}
-            style={styles.formField}
-          />
+          {showRole !== false && (
+            <Dropdown
+              label="Role"
+              values={userRoles}
+              selectedValue={userData.role}
+              keyExtractor={(role) => role}
+              titleExtractor={(role) => roleToLabel(role)}
+              onSelect={(role) => setUserData('role', role)}
+              onShow={() => Keyboard.dismiss()}
+              style={styles.formField}
+            />
+          )}
           <Button
             style={styles.formField}
             loading={isLoading}

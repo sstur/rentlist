@@ -13,6 +13,7 @@ import PropertyEdit from '../screens/PropertyEdit';
 import UserList from '../screens/UserList';
 import UserDetails from '../screens/UserDetails';
 import UserCreate from '../screens/UserCreate';
+import MyProfile from '../screens/MyProfile';
 
 import DrawerButton from '../components/DrawerButton';
 import { RootParamList } from '../types/Navigation';
@@ -94,6 +95,14 @@ export default function MainStack() {
         component={UserCreate}
         options={{
           title: 'Create User',
+          headerBackTitleVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="MyProfile"
+        component={MyProfile}
+        options={{
+          title: 'My Profile',
           headerBackTitleVisible: false,
         }}
       />
