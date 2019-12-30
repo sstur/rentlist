@@ -10,3 +10,4 @@ export * from './logout';
 export * from './signup';
 export * from './updateUser';
 export * from './createUser';
+export * from './deleteUser';

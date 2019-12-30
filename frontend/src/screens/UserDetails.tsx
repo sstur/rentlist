@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Keyboard } from 'react-native';
+import { Keyboard, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { useRoute } from '@react-navigation/native';
 
@@ -27,10 +27,33 @@ export default function UserDetails() {
       showToast('Save failed: ' + result.error);
     }
   };
+  let onDelete = async () => {
+    Keyboard.dismiss();
+    Alert.alert('Delete', 'Press "Delete" to permanently delete this user.', [
+      { text: 'Cancel' },
+      { text: 'Delete', onPress: reallyDelete },
+    ]);
+  };
+  let reallyDelete = async () => {
+    setLoading(true);
+    let result = await Api.deleteUser(user.id);
+    if (result.success) {
+      refresh();
+      navigation.navigate('UserList');
+    } else {
+      setLoading(false);
+      showToast('Request failed: ' + result.error);
+    }
+  };
   return (
     <ToastProvider ref={toastRef}>
       {() => (
-        <UserEditForm user={user} isLoading={isLoading} onSubmit={onSubmit} />
+        <UserEditForm
+          user={user}
+          isLoading={isLoading}
+          onSubmit={onSubmit}
+          onDelete={onDelete}
+        />
       )}
     </ToastProvider>
   );

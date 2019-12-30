@@ -17,10 +17,11 @@ type Props = {
   user?: User;
   isLoading: boolean;
   onSubmit: (data: UserInput) => void;
+  onDelete?: () => void;
 };
 
 export default function UserEditForm(props: Props) {
-  let { user, isLoading, onSubmit } = props;
+  let { user, isLoading, onSubmit, onDelete } = props;
   let initialData: UserInput;
   if (user) {
     let { name, email, role } = user;
@@ -88,13 +89,18 @@ export default function UserEditForm(props: Props) {
             style={styles.formField}
           />
           <Button
-            mode="contained"
+            style={styles.formField}
             loading={isLoading}
             disabled={isLoading}
             onPress={submitHandler}
           >
             Save
           </Button>
+          {onDelete && (
+            <Button color="#E1545F" onPress={onDelete}>
+              Delete
+            </Button>
+          )}
         </ScrollView>
       </View>
     </TouchableWithoutFeedback>

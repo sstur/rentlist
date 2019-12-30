@@ -39,7 +39,10 @@ export default (app: Express) => {
   });
 
   app.post('/properties', async (request, response) => {
-    let user = await authUser(request.get('X-Auth'));
+    let user = await authUser(request.get('X-Auth'), {
+      MANAGER: true,
+      ADMIN: true,
+    });
     if (!user) {
       return response.status(403).json({ error: FORBIDDEN });
     }
@@ -87,7 +90,10 @@ export default (app: Express) => {
 
   app.put('/properties/:id', async (request, response) => {
     let idToEdit = String(request.params.id);
-    let user = await authUser(request.get('X-Auth'));
+    let user = await authUser(request.get('X-Auth'), {
+      MANAGER: true,
+      ADMIN: true,
+    });
     if (!user) {
       return response.status(403).json({ error: FORBIDDEN });
     }
@@ -128,7 +134,10 @@ export default (app: Express) => {
 
   app.delete('/properties/:id', async (request, response) => {
     let id = String(request.params.id);
-    let user = await authUser(request.get('X-Auth'));
+    let user = await authUser(request.get('X-Auth'), {
+      MANAGER: true,
+      ADMIN: true,
+    });
     if (!user) {
       return response.status(403).json({ error: FORBIDDEN });
     }

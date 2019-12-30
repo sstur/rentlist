@@ -89,6 +89,21 @@ export default (app: Express) => {
     }
   });
 
+  app.delete('/users/:id', async (request, response) => {
+    let id = String(request.params.id);
+    let user = await authUser(request.get('X-Auth'), { ADMIN: true });
+    if (!user) {
+      return response.status(403).json({ error: FORBIDDEN });
+    }
+    await db.sessions.deleteMany({
+      where: { user: { id } },
+    });
+    await db.users.delete({
+      where: { id },
+    });
+    response.json({ success: true });
+  });
+
   app.get('/users', async (request, response) => {
     let user = await authUser(request.get('X-Auth'), { ADMIN: true });
     if (!user) {
