@@ -6,6 +6,7 @@ import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 import { Text, List, Button, IconButton } from '../components/core-ui';
 import { useFetch } from '../state/userList';
 import { NavigationProp } from '../types/Navigation';
+import { roleToLabel } from '../helpers/userRoles';
 
 export default function UserList() {
   let { state, refresh } = useFetch();
@@ -48,7 +49,7 @@ export default function UserList() {
       renderItem={({ item: user }) => (
         <List.Item
           title={user.name}
-          description={user.email}
+          description={`${roleToLabel(user.role)} | ${user.email}`}
           right={() => <List.Icon icon="chevron-right" />}
           onPress={() => {
             navigation.navigate('UserDetails', { user });
