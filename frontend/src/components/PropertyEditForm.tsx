@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-import { Button, TextInput } from '../components/core-ui';
+import { Button, TextInput, NumberInput } from '../components/core-ui';
 import useFormData from '../helpers/useFormData';
 import Dropdown from '../components/core-ui/Dropdown';
 import { Property, PropertyInput } from '../types/Property';
@@ -40,7 +40,7 @@ export default function PropertyEditForm(props: Props) {
       name,
       description,
       floorArea,
-      price,
+      price: price / 100,
       bedCount,
       bathCount,
       address,
@@ -103,6 +103,36 @@ export default function PropertyEditForm(props: Props) {
             style={styles.formField}
             value={formData.floorArea}
             onChangeText={(text) => setFormData('floorArea', text)}
+            returnKeyType="done"
+            onSubmitEditing={() => {
+              Keyboard.dismiss();
+            }}
+          />
+          <NumberInput
+            label="Price"
+            style={styles.formField}
+            value={formData.price}
+            onChange={(value) => setFormData('price', value)}
+            returnKeyType="done"
+            onSubmitEditing={() => {
+              Keyboard.dismiss();
+            }}
+          />
+          <NumberInput
+            label="Number of Bedrooms"
+            style={styles.formField}
+            value={formData.bedCount}
+            onChange={(value) => setFormData('bedCount', value)}
+            returnKeyType="done"
+            onSubmitEditing={() => {
+              Keyboard.dismiss();
+            }}
+          />
+          <NumberInput
+            label="Number of Bathrooms"
+            style={styles.formField}
+            value={formData.bathCount}
+            onChange={(value) => setFormData('bathCount', value)}
             returnKeyType="done"
             onSubmitEditing={() => {
               Keyboard.dismiss();

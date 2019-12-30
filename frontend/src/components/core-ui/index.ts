@@ -10,5 +10,6 @@ export * from './Button';
 export * from './Dropdown';
 export * from './FixedRatioImage';
 export * from './Link';
+export * from './NumberInput';
 export * from './Text';
 export * from './TextInput';
