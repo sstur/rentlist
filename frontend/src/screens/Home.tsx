@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FAB } from 'react-native-paper';
@@ -32,6 +32,10 @@ export default function Home() {
     navigation.navigate('PropertyDetails', { property, refresh });
   };
   let { isLoading, error, data } = state;
+  let properties = useMemo(
+    () => data.filter((property) => property.rentalStatus === 'AVAILABLE'),
+    [data],
+  );
   if (error) {
     return (
       <View style={styles.errorContainer}>
@@ -45,7 +49,7 @@ export default function Home() {
     <PropertyMap
       onItemPress={onItemPress}
       isLoading={isLoading}
-      data={data}
+      data={properties}
       refresh={refresh}
     />
   ) : (
@@ -53,7 +57,7 @@ export default function Home() {
       <PropertyList
         onItemPress={onItemPress}
         isLoading={isLoading}
-        data={data}
+        data={properties}
         refresh={refresh}
       />
       <FAB
