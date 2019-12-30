@@ -48,7 +48,7 @@ export default function PropertyEditForm(props: Props) {
       lat,
       lng,
       rentalStatus,
-      images: images.join('\n'),
+      images: images.map(({ url }) => url)[0] || '',
     };
   } else {
     initialData = {
@@ -144,6 +144,16 @@ export default function PropertyEditForm(props: Props) {
             style={styles.formField}
             value={formData.address}
             onChangeText={(text) => setFormData('address', text)}
+            returnKeyType="done"
+            onSubmitEditing={() => {
+              Keyboard.dismiss();
+            }}
+          />
+          <TextInput
+            label="Image"
+            style={styles.formField}
+            value={formData.images}
+            onChangeText={(text) => setFormData('images', text)}
             returnKeyType="done"
             onSubmitEditing={() => {
               Keyboard.dismiss();

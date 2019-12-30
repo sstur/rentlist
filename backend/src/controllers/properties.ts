@@ -112,7 +112,10 @@ export default (app: Express) => {
       lat,
       lng,
       rentalStatus,
+      images,
     } = data;
+    // This is suboptimal; deleting old images before adding new.
+    await db.images.deleteMany({ where: { property: { id: idToEdit } } });
     let property = await db.properties.update({
       where: { id: idToEdit },
       data: {
@@ -126,6 +129,12 @@ export default (app: Express) => {
         lat,
         lng,
         rentalStatus,
+        images: {
+          create: images
+            .split('\n')
+            .filter((url) => url.length !== 0)
+            .map((url) => ({ url })),
+        },
       },
       select: selectFields,
     });
