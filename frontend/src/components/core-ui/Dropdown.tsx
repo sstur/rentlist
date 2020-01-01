@@ -1,7 +1,7 @@
 import React, { useState, ComponentProps, useEffect } from 'react';
 import { View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { Menu } from 'react-native-paper';
-import { MaterialIcons as Icon } from '@expo/vector-icons';
+import { Icon } from './Icon';
 import { Text } from './Text';
 
 type Props<T> = ComponentProps<typeof View> & {
@@ -50,8 +50,8 @@ export default function Dropdown<T>(props: Props<T>) {
           anchor={
             <Icon
               style={styles.icon}
-              name="keyboard-arrow-down"
-              size={20}
+              name="chevron-down"
+              size={28}
               color="black"
             />
           }

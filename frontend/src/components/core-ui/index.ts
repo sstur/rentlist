@@ -2,7 +2,6 @@ export {
   // These components are unchanged from RN Paper
   ActivityIndicator,
   Avatar,
-  IconButton,
   List,
   Menu,
   Snackbar,
@@ -11,6 +10,8 @@ export * from './Button';
 export * from './Dropdown';
 export * from './FixedRatioImage';
 export * from './HeaderDropdown';
+export * from './Icon';
+export * from './IconButton';
 export * from './Link';
 export * from './NumberInput';
 export * from './Text';

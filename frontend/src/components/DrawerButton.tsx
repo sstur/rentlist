@@ -1,13 +1,12 @@
 import React from 'react';
-import { IconButton } from 'react-native-paper';
-import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+import { IconButton } from './core-ui';
 import { useDrawer } from '../navigation/Drawer';
 
 export default function DrawerButton() {
   let { openDrawer } = useDrawer();
   return (
     <IconButton
-      icon={() => <Icon name="menu" size={28} color="white" />}
+      icon="menu"
       onPress={() => {
         openDrawer();
       }}

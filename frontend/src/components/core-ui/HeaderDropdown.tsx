@@ -1,6 +1,6 @@
 import React, { ComponentProps, useState } from 'react';
-import { IconButton, Menu } from 'react-native-paper';
-import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+import { Menu } from 'react-native-paper';
+import { IconButton } from './IconButton';
 
 type IconButtonProps = ComponentProps<typeof IconButton>;
 
@@ -22,7 +22,7 @@ export function HeaderDropdown(props: Props) {
       onDismiss={() => setMenuVisible(false)}
       anchor={
         <IconButton
-          icon={() => <Icon name="dots-vertical" size={28} color="white" />}
+          icon="dots-vertical"
           onPress={() => {
             setMenuVisible(true);
           }}
