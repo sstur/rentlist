@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "email": "sstur@me.com",
+      "name": "Simon",
+      "password": "123",
+      "role": "ADMIN"
+    },
+    {
+      "email": "otis@example.com",
+      "name": "Otis Woods",
+      "password": "123",
+      "role": "MANAGER"
+    },
+    {
+      "email": "pamela@example.com",
+      "name": "Pamela Ferrell",
+      "password": "123",
+      "role": "MANAGER"
+    },
+    {
+      "email": "thelma@example.com",
+      "name": "Thelma Alonzo",
+      "password": "123",
+      "role": "MANAGER"
+    }
+  ]
+}

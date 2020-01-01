@@ -1,39 +1,33 @@
+import { User } from '@prisma/photon';
 import db from './helpers/db';
 import { generateHash } from './helpers/password';
+import * as fixtures from './fixtures';
 
 async function main() {
-  await db.users.create({
-    data: {
-      email: 'sstur@me.com',
-      name: 'Simon',
-      password: await generateHash('123'),
-      role: 'ADMIN',
-    },
-  });
-  await db.users.create({
-    data: {
-      email: 'otis@example.com',
-      name: 'Otis Woods',
-      password: await generateHash('123'),
-      role: 'MANAGER',
-    },
-  });
-  await db.users.create({
-    data: {
-      email: 'pamela@example.com',
-      name: 'Pamela Ferrell',
-      password: await generateHash('123'),
-      role: 'MANAGER',
-    },
-  });
-  await db.users.create({
-    data: {
-      email: 'thelma@example.com',
-      name: 'Thelma Alonzo',
-      password: await generateHash('123'),
-      role: 'MANAGER',
-    },
-  });
+  let users: Array<User> = [];
+  for (let input of fixtures.users) {
+    let user = await db.users.create({
+      data: {
+        ...input,
+        password: await generateHash(input.password),
+      },
+    });
+    if (user.role === 'MANAGER') {
+      users.push(user);
+    }
+  }
+  for (let { key, ...input } of fixtures.properties) {
+    // Use a deterministic way to randomly assign a manager.
+    let userIndex = parseInt(key.slice(-8), 16) % users.length;
+    let user = users[userIndex];
+    await db.properties.create({
+      data: {
+        ...input,
+        images: { create: input.images.map((url) => ({ url })) },
+        manager: { connect: { id: user.id } },
+      },
+    });
+  }
 }
 
 main()

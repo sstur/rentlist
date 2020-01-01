@@ -1,0 +1,1738 @@
+{
+  "properties": [
+    {
+      "key": "a29dd0e91478167d12564d3739af2b1c",
+      "createdAt": "2019-12-25T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "902",
+      "price": 400000,
+      "bedCount": 1,
+      "bathCount": 1.5,
+      "address": "320 Palo Alto Ave APT B3, Palo Alto, CA 94301",
+      "lat": 37.450061,
+      "lng": -122.167149,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS23jvzamz80170000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "155ef3ca3b039c1aae94866938001456",
+      "createdAt": "2019-12-23T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "600",
+      "price": 260000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "2901 Middlefield Rd APT 6, Palo Alto, CA 94306",
+      "lat": 37.43164,
+      "lng": -122.126045,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISz3t4h0i5ev230000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "f06e798ee72a01ea16474530ecb011be",
+      "createdAt": "2019-12-19T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "650",
+      "price": 250000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "201 Loma Verde Ave APT D, Palo Alto, CA 94306",
+      "lat": 37.42393,
+      "lng": -122.130331,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISr1y8niq056ps0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "a2469dc545719e0ebee9a5773c6cefc9",
+      "createdAt": "2019-12-19T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1700",
+      "price": 480000,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "4148 Byron St, Palo Alto, CA 94306",
+      "lat": 37.415902,
+      "lng": -122.105179,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3zfammik2ls30000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "1eb68ebb30b746871360d128386a2f02",
+      "createdAt": "2019-12-19T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "650",
+      "price": 300000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "1 bed, 650 sqft, $3,000, 817 University Avenue",
+      "lat": 37.452318,
+      "lng": -122.155622,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISnami89vasg5a0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "7e5b73a591c8d45d2807581c674e7562",
+      "createdAt": "2019-12-17T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1600",
+      "price": 437500,
+      "bedCount": 2,
+      "bathCount": 1.5,
+      "address": "Driscoll Pl, Palo Alto, CA 94306",
+      "lat": 37.41291,
+      "lng": -122.12662,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS6eazq51h6mf21000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2ec4fad8eed239dfcdaaf032d99390a0",
+      "createdAt": "2019-12-17T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1250",
+      "price": 550000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "2051 El Camino Real # 301, Palo Alto, CA 94306",
+      "lat": 37.427576,
+      "lng": -122.148497,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISy7oz0i5zpm8l1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "4cf1201a4123f54d20050feaeba7e1f7",
+      "createdAt": "2019-12-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "900",
+      "price": 199500,
+      "bedCount": 0,
+      "bathCount": 1,
+      "address": "275 Cowper St, Palo Alto, CA 94301",
+      "lat": 37.45014,
+      "lng": -122.161806,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjjiahkkhognc0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "61c27390c523b41c9a9054f913176189",
+      "createdAt": "2019-12-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1247",
+      "price": 400000,
+      "bedCount": 2,
+      "bathCount": 1.5,
+      "address": "141 S California Ave STE B306, Palo Alto, CA 94306",
+      "lat": 37.428167,
+      "lng": -122.142313,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISaluqg01l0wi80000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "49d3c98eb89d86f082b3d5574057621a",
+      "createdAt": "2019-12-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "375",
+      "price": 259500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "235 Emerson St APT 8, Palo Alto, CA 94301",
+      "lat": 37.44679,
+      "lng": -122.165728,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISnamaijr1gt910000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "def2e06e206241f84f8a8555e772067f",
+      "createdAt": "2019-12-12T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1007",
+      "price": 365000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "899 Webster St APT 2, Palo Alto, CA 94301",
+      "lat": 37.446657,
+      "lng": -122.153096,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISrxuju7woix9a0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "4c847e18560888a01a1cf2ff9dd2e441",
+      "createdAt": "2019-12-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1254",
+      "price": 449500,
+      "bedCount": 2,
+      "bathCount": 2.5,
+      "address": "675-699 Towle Way, 2 Bed / 2.5 Bath Townhouse: Type A",
+      "lat": 37.415753,
+      "lng": -122.129328,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3vw8dmmyqsby0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2fefdc25b0ff0bf28b2e3f09c3eb8cec",
+      "createdAt": "2019-12-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "700",
+      "price": 439500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "4040 El Camino Real, Palo Alto, CA 94306",
+      "lat": 37.4148,
+      "lng": -122.127698,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3n6jda096b4v0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d3c37924cf80b0413cc9d3722d7228d5",
+      "createdAt": "2019-12-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "776",
+      "price": 259500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "1982 W Bayshore Rd APT 333, East Palo Alto, CA 94303",
+      "lat": 37.452502,
+      "lng": -122.128834,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3n6bncmuwf0k1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "83bd601dc1bf9f112aa428cfd0d56ee1",
+      "createdAt": "2019-12-10T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1000",
+      "price": 359500,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "453 Hawthorne Ave APT B, Palo Alto, CA 94301",
+      "lat": 37.450297,
+      "lng": -122.163776,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISniscu1ug7pxk1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ae94ffe83aa3bc5052e74df6a7619b92",
+      "createdAt": "2019-12-10T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "750",
+      "price": 295000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "304 Grant Ave, Palo Alto, CA 94306",
+      "lat": 37.426409,
+      "lng": -122.142359,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvsh50lq20k6d0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "f5576e4558c0d74277e718d3ca7b4ba9",
+      "createdAt": "2019-12-10T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "899",
+      "price": 370000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "332 Grant Ave, Palo Alto, CA 94306",
+      "lat": 37.426101,
+      "lng": -122.142542,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISbl64fp9gb1y81000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "6689ce3c9bd30c90e3154998383133af",
+      "createdAt": "2019-12-09T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1037",
+      "price": 385000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "831 University Ave, Palo Alto, CA 94301",
+      "lat": 37.452659,
+      "lng": -122.155503,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISv8y8yncdnwih0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d1811d12971157ce9363c702c669b379",
+      "createdAt": "2019-12-09T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "845",
+      "price": 280000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "2 bed, 1.0 bath, 845 sqft, $2,800, O",
+      "lat": 37.420496,
+      "lng": -122.129797,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISzfqqhltw1hsk0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "c77a6cf6ecec16a5dbd490dea8a0126a",
+      "createdAt": "2019-12-06T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1050",
+      "price": 399500,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "369-379 Everett Avenue, 2 Bed / 1 Bath: Type C",
+      "lat": 37.448587,
+      "lng": -122.163451,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjr49toe4jrd21000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "41dc79a988a40b3d9073e986993da4c0",
+      "createdAt": "2019-12-06T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "1475",
+      "price": 600000,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "2865 Park Blvd APT 211, Palo Alto, CA 94306",
+      "lat": 37.426314,
+      "lng": -122.138187,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3jvjrjror9rl0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "66a88ac84b37294a0f0ee9246b8229a8",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "600",
+      "price": 229500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "4275 Mckellar Ln APT 2, Palo Alto, CA 94306",
+      "lat": 37.407331,
+      "lng": -122.122085,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvwwnfuhbuj180000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "41f7b84a11ac4d25d37c6efefdcfe09c",
+      "createdAt": "2019-12-05T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "800",
+      "price": 399900,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "210 Bryant St # 216, Palo Alto, CA 94301",
+      "lat": 37.448013,
+      "lng": -122.165239,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISe01hq1all8in1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5189012f69a281067eca8e7455655978",
+      "createdAt": "2019-11-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1150",
+      "price": 369500,
+      "bedCount": 2,
+      "bathCount": 1.5,
+      "address": "Willmar Dr, Palo Alto, CA 94306",
+      "lat": 37.405275,
+      "lng": -122.130819,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISapptajajf1hj1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5b8a190b86d7832d36ac4420af784ec1",
+      "createdAt": "2019-11-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "830",
+      "price": 399500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "360 Forest Avenue, 1 Bed / 1 Bath: Type C",
+      "lat": 37.444872,
+      "lng": -122.157987,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjfvd9t21607a0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ac520d73031e84989e42b0185172f386",
+      "createdAt": "2019-11-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1197",
+      "price": 370000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "W Bayshore Rd, East Palo Alto, CA 94303",
+      "lat": 37.45248,
+      "lng": -122.12786,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISrpotjim01oyt0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "3c71b8fd5c58927116d343dda2068f71",
+      "createdAt": "2019-11-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1100",
+      "price": 470000,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "Alma St, Palo Alto, CA 94301",
+      "lat": 37.43011,
+      "lng": -122.14284,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISv8yoe3oi1di10000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2057d3c3af2437debe03b2fae05c9a93",
+      "createdAt": "2019-11-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "800",
+      "price": 420000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "Washington Ave, Palo Alto, CA 94301",
+      "lat": 37.43011,
+      "lng": -122.14284,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISn6rv284n1t6e1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "3841b381cb79a2e3460d49c7cefdc2ee",
+      "createdAt": "2019-11-26T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "550",
+      "price": 375000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "Tennyson Ave, Palo Alto, CA 94301",
+      "lat": 37.43495,
+      "lng": -122.14413,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISf8z0fni2mgif1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "dcc111e10cbc02d5af56142bde27ea09",
+      "createdAt": "2019-11-26T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "965",
+      "price": 365000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "628 Waverley St APT C, Palo Alto, CA 94301",
+      "lat": 37.445769,
+      "lng": -122.158783,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISbx3u2zi5w5ca0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "9bb886029dbe3fe01500a43148a5187f",
+      "createdAt": "2019-11-25T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1376",
+      "price": 520000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "231 High St, Palo Alto, CA 94301",
+      "lat": 37.446346,
+      "lng": -122.166659,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvchi97rol2kx1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5569e38f91d217efc74b7946d8639638",
+      "createdAt": "2019-11-22T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "822",
+      "price": 320000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "883 Federation Way, Palo Alto, CA 94303",
+      "lat": 37.42411,
+      "lng": -122.103835,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS2vg080uhw9vg0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ee4dd7e15168240ff7cce420d62ea4bb",
+      "createdAt": "2019-11-22T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "300",
+      "price": 220000,
+      "bedCount": 0,
+      "bathCount": 1,
+      "address": "251 Emerson St APT 7, Palo Alto, CA 94301",
+      "lat": 37.446638,
+      "lng": -122.165407,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISv8mfrxc015jm0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "dd036cb469027edf0ed6b958caff2b8d",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "450",
+      "price": 259500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "Hawthorne Gardens Apartments, One Bedroom",
+      "lat": 37.447816,
+      "lng": -122.166477,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISy709ghie4i0p1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "37de02ec75a1e28c3eb6610562b10254",
+      "createdAt": "2019-11-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1033",
+      "price": 440000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "765 San Antonio Rd APT 70, Palo Alto, CA 94303",
+      "lat": 37.418481,
+      "lng": -122.103928,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3b1nb77xvlfx1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "f7866ec6dbbb3946b206fef4bd7500ce",
+      "createdAt": "2019-11-14T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1047",
+      "price": 340000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "345 Sheridan Ave APT 101, Palo Alto, CA 94306",
+      "lat": 37.425117,
+      "lng": -122.140958,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISr9s9ideqo7w60000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d4047d20e1d1f5f650aff0689176025d",
+      "createdAt": "2019-11-14T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "559",
+      "price": 329500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "333 Hawthorne Ave, Palo Alto, CA 94301",
+      "lat": 37.448907,
+      "lng": -122.164767,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvc9gunp7m5d20000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "64cd8c593739440a193cf4891a044cc4",
+      "createdAt": "2019-11-06T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "975",
+      "price": 395000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "Middlefield Rd, Palo Alto, CA 94301",
+      "lat": 37.44838,
+      "lng": -122.15307,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjrgyg9is3x4n0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "f484013011be129bd5047a6f9858b54a",
+      "createdAt": "2019-10-22T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "775",
+      "price": 390000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "828 Cowper St APT A, Palo Alto, CA 94301",
+      "lat": 37.445415,
+      "lng": -122.155078,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISrhe0cyqlfm4v0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "9868c765a005e7bece955237afe5f5b7",
+      "createdAt": "2019-10-20T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "899",
+      "price": 355000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "344 Grant Ave, Palo Alto, CA 94306",
+      "lat": 37.42599,
+      "lng": -122.142755,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfw1jplsoqdif1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5cec9d5517360941a0eede7f00cfb9eb",
+      "createdAt": "2019-10-13T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1300",
+      "price": 479500,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "678 Homer Ave, Palo Alto, CA 94301",
+      "lat": 37.448001,
+      "lng": -122.153076,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvgwg544exffz0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "7ca9a7c1191a9d9abfe277e0f2e20f3f",
+      "createdAt": "2019-10-12T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "600",
+      "price": 280000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "1 bed, 600 sqft, $2,800, 361 Everett Ave",
+      "lat": 37.448254,
+      "lng": -122.163348,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS7mwdjhgrk7a40000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5e8727a0becc404a7e44e220b66dfe7b",
+      "createdAt": "2019-10-12T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "890",
+      "price": 510000,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "3 bed, 890 sqft, $5,100, 311 Ramona St",
+      "lat": 37.446813,
+      "lng": -122.164341,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISrxe3vkcqv0361000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ace5a3c1a1f6fb7a21095d37b2fb52b4",
+      "createdAt": "2019-10-12T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1000",
+      "price": 400000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "517 Homer Ave, Palo Alto, CA 94301",
+      "lat": 37.446421,
+      "lng": -122.155347,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISu8u1qt0hx9c81000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "000c3604a04e7bb82f19d0c5c5337066",
+      "createdAt": "2019-10-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "415",
+      "price": 219500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "444 Grant Avenue, 1 Bed / 1 Bath: Type B",
+      "lat": 37.425064,
+      "lng": -122.143529,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISzbn1lfclx3ud0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ec953c9c102574f46589053db3e1a15f",
+      "createdAt": "2019-10-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1050",
+      "price": 459500,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "724-726-728-730-732 Cowper Street, 2 Bed / 2 Bath: Type A",
+      "lat": 37.44618,
+      "lng": -122.156357,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjndtnb9iktgr0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d8a3a77f21f8e082f2464c07977a98ed",
+      "createdAt": "2019-10-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "600",
+      "price": 239500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "469 Grant Avenue, 1 Bed / 1 Bath: Type B",
+      "lat": 37.424466,
+      "lng": -122.14321,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3voah8hco1ar0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "48c92949c1b8ab474c2b80f25ddebc4a",
+      "createdAt": "2019-10-10T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1114",
+      "price": 499500,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "221 High St, Palo Alto, CA 94301",
+      "lat": 37.446345,
+      "lng": -122.166374,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISrhmax7b2ydls1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "e307f50f9527eac3426ce1834f09a6b0",
+      "createdAt": "2019-10-04T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "2310",
+      "price": 410000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "543 Homer Ave, Palo Alto, CA 94301",
+      "lat": 37.446733,
+      "lng": -122.155018,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISzfa2gbk8ogtc0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "3a66799df1184cd467515e61f57e2c53",
+      "createdAt": "2019-10-03T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1313",
+      "price": 299500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "766 University Ave, Palo Alto, CA 94301",
+      "lat": 37.451232,
+      "lng": -122.155661,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS7yxanfi2fiu61000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2454c403da3578a399cc2174bbaad333",
+      "createdAt": "2019-09-25T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "1141",
+      "price": 345000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "4250 El Camino Real C328 Palo, Palo Alto, CA 94306",
+      "lat": 37.406447,
+      "lng": -122.121824,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISn2krzn2clgls1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2d6ce30d75bbd5994f1146fce219e261",
+      "createdAt": "2019-08-27T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "923",
+      "price": 650000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "2571 Park Blvd APT R100, Palo Alto, CA 94306",
+      "lat": 37.428078,
+      "lng": -122.141119,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvkjd5h5avck10000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "e780210f2156911a71cab3931bbd6ebf",
+      "createdAt": "2019-07-28T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "925",
+      "price": 279500,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "Alma St, Palo Alto, CA 94306",
+      "lat": 37.423525,
+      "lng": -122.130414,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISybb8elp1x98e0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "e2dde4292eec82a933024dcf91737529",
+      "createdAt": "2018-11-17T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "700",
+      "price": 339500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "4020 El Camino Real # 4, Palo Alto, CA 94306",
+      "lat": 37.415078,
+      "lng": -122.12814,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISv4roesiwapqs0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "c11fe5ac98b661428d8a384f82d40fca",
+      "createdAt": "2019-12-08T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "600",
+      "price": 215000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "4341 Beresford St APT 2, San Mateo, CA 94403",
+      "lat": 37.527924,
+      "lng": -122.291062,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3jnh42ez2mn71000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "956cbf80f473cffc1f6437ee33a93477",
+      "createdAt": "2019-12-07T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "943",
+      "price": 297500,
+      "bedCount": 1,
+      "bathCount": 1.5,
+      "address": "5 W Bellevue Ave APT 1, San Mateo, CA 94402",
+      "lat": 37.570784,
+      "lng": -122.33756,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfksfnmfpf4e60000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "6a5e0c27e82c3eaa583870bf45ac12bd",
+      "createdAt": "2019-12-07T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1000",
+      "price": 310000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "211 E Santa Inez Ave APT 1, San Mateo, CA 94401",
+      "lat": 37.57136,
+      "lng": -122.330811,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfse2mw7ygku50000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "24a304d4734b760ab47f45da740f23ce",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "640",
+      "price": 330000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "324 Catalpa St APT 302, San Mateo, CA 94401",
+      "lat": 37.569874,
+      "lng": -122.326702,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS7ui0e446gtmb0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "4f64ba555a73b880acf0ecc9ad478e47",
+      "createdAt": "2019-12-06T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "1268",
+      "price": 360000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "320 Elm St APT 309, San Mateo, CA 94401",
+      "lat": 37.570838,
+      "lng": -122.332357,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISnuxsfdii5hux0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2f79caf3eac7b3c0e6e1b7459ad415c2",
+      "createdAt": "2019-12-05T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1200",
+      "price": 370000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "71 9th Ave, San Mateo, CA 94401",
+      "lat": 37.560332,
+      "lng": -122.320638,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISy7c2vdkxm6xp0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ec091a7e64c90aeeefa2b1b7df92bc1e",
+      "createdAt": "2019-12-05T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "1054",
+      "price": 350000,
+      "bedCount": 3,
+      "bathCount": 1.5,
+      "address": "1536 Day Ave UNIT C, San Mateo, CA 94403",
+      "lat": 37.551356,
+      "lng": -122.28822,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3jzq3t5yzcdr0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "cfbbb3e967cecf218eee01cae2824006",
+      "createdAt": "2019-12-03T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "750",
+      "price": 280000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "49 E 40th Ave APT 9, San Mateo, CA 94403",
+      "lat": 37.53348,
+      "lng": -122.290555,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvkzxn9pgabx71000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "a74dbf7e2e506165c3cf37f3fecf3a36",
+      "createdAt": "2019-12-01T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1000",
+      "price": 340000,
+      "bedCount": 2,
+      "bathCount": 1.5,
+      "address": "226 1st Ave APT 3, San Mateo, CA 94401",
+      "lat": 37.566663,
+      "lng": -122.324374,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS6m48orduw3k00000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "3746a8264184378331225fcba7c68ed2",
+      "createdAt": "2019-11-30T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "1731",
+      "price": 430000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "10 9th Ave # 4, San Mateo, CA 94401",
+      "lat": 37.559388,
+      "lng": -122.320774,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS337e63j4dsna0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "914e2066ddf0aea4aad37c5321e3de7a",
+      "createdAt": "2019-11-28T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "800",
+      "price": 369500,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "706 S Fremont St # A, San Mateo, CA 94402",
+      "lat": 37.565292,
+      "lng": -122.315495,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjvnikgmgw8g81000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "1a57656c7e8e1085d206e1bbac9d1592",
+      "createdAt": "2019-11-26T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "770",
+      "price": 330000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "Alameda De Las Pulgas, San Mateo, CA 94403",
+      "lat": 37.54693,
+      "lng": -122.31964,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISnu9if3a087nw1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ac5450910745785dc96e18cbccd9cd10",
+      "createdAt": "2019-11-21T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "4726",
+      "price": 362500,
+      "bedCount": 2,
+      "bathCount": 1.5,
+      "address": "41 Madison Ave, San Mateo, CA 94402",
+      "lat": 37.554188,
+      "lng": -122.31828,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISyvah4iyuags80000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "b37abc157341f2b10c2679b371050048",
+      "createdAt": "2019-11-19T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "484",
+      "price": 285000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "707 Fathom Dr APT 209, San Mateo, CA 94404",
+      "lat": 37.563782,
+      "lng": -122.286433,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfsi9uuq8z9ej0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "84570983794473fa539d982db8a5c61f",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1130",
+      "price": 399500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "19 9th Avenue, 19 9th Ave",
+      "lat": 37.560008,
+      "lng": -122.321267,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS33fobgfulcvl0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "24cecdad06dd333a332bbeda5d84728c",
+      "createdAt": "2019-11-18T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "605",
+      "price": 219500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "128 N Humboldt St APT 22, San Mateo, CA 94401",
+      "lat": 37.574529,
+      "lng": -122.320814,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISrtfxvkeo4p7n0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "7f33ba61d749fb1a4bc04139677d3ed9",
+      "createdAt": "2019-11-17T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "4114",
+      "price": 352500,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "3301 Los Prados St, San Mateo, CA 94403",
+      "lat": 37.541162,
+      "lng": -122.278439,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISf8recsokltrr1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "0f56f1461586747faf065b61969cea87",
+      "createdAt": "2019-11-17T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "884",
+      "price": 320000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "26 Hayward Ave APT 103, San Mateo, CA 94401",
+      "lat": 37.558439,
+      "lng": -122.31958,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISj7hh46vr964l0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "1171e41f7dc6b7ccf5500a553dbd483d",
+      "createdAt": "2019-11-14T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1066",
+      "price": 479000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "1020 Yates Way APT 304, San Mateo, CA 94403",
+      "lat": 37.545787,
+      "lng": -122.294134,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS3z74sc75r3qv0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "b9797dbcab6925738d7dc04269b494c5",
+      "createdAt": "2019-11-13T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1944",
+      "price": 600000,
+      "bedCount": 3,
+      "bathCount": 2.5,
+      "address": "225 Virginia Ave PH E, San Mateo, CA 94402",
+      "lat": 37.559798,
+      "lng": -122.32848,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISf8nrzn55c0b01000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "41b5f7ddc5e549dad98c575a603d7a86",
+      "createdAt": "2019-11-08T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1007",
+      "price": 300000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "114 Barneson Ave APT 4, San Mateo, CA 94402",
+      "lat": 37.553389,
+      "lng": -122.318539,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS33fc2dtnl4vj1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "e169bfeaf5e97ba8e8ca88b8c22fb923",
+      "createdAt": "2019-11-07T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "5591",
+      "price": 279500,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "718 N Claremont St, San Mateo, CA 94401",
+      "lat": 37.577824,
+      "lng": -122.332989,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfkowd3q2vwlh0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5073a932b96b7f67ca6c97a4c32b816d",
+      "createdAt": "2019-11-07T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1096",
+      "price": 320000,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "719 Highland Ave APT 5, San Mateo, CA 94401",
+      "lat": 37.573946,
+      "lng": -122.338321,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjnd5xi2hydms1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "f9f24388c327b09310eaa0f71c7620dc",
+      "createdAt": "2019-11-06T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1500",
+      "price": 430000,
+      "bedCount": 3,
+      "bathCount": 2,
+      "address": "46 Barneson Ave APT 2, San Mateo, CA 94402",
+      "lat": 37.553756,
+      "lng": -122.31803,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISme1xguz6utjt1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ac8807c034ac8f820c56ade33626db50",
+      "createdAt": "2019-11-06T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1082",
+      "price": 350000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "828 N El Camino Real UNIT 3, San Mateo, CA 94401",
+      "lat": 37.574271,
+      "lng": -122.341437,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvwk2j1hgo6k80000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "6f0b97432c01212bb956cfe4d74b1d10",
+      "createdAt": "2019-11-01T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "706",
+      "price": 235000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "688 Mariners Island Blvd, San Mateo, CA 94404",
+      "lat": 37.563997,
+      "lng": -122.28534,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISr90wc2i3q1kr1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "062da7faf3b3c613ff2b152f78011124",
+      "createdAt": "2019-10-29T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "850",
+      "price": 310000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "216 Grand Blvd APT 2, San Mateo, CA 94401",
+      "lat": 37.573231,
+      "lng": -122.335934,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfojrdlgxw04t0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "0a7cb5698d6160422895439caba6435f",
+      "createdAt": "2019-10-28T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "4114",
+      "price": 292500,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "3305 Los Prados St, San Mateo, CA 94403",
+      "lat": 37.540971,
+      "lng": -122.278455,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS33nmzzfu5cm80000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "8aaf127643cbdb848ae704dfe4d5aff8",
+      "createdAt": "2019-10-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "375",
+      "price": 199500,
+      "bedCount": 0,
+      "bathCount": 1,
+      "address": "401 E Poplar Ave, San Mateo, CA 94401",
+      "lat": 37.574387,
+      "lng": -122.330997,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISynoikzvlzlm60000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "72fdd9721ff93d48722ada9a53870091",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "650",
+      "price": 235000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "605 E Santa Inez Ave, San Mateo, CA 94401",
+      "lat": 37.573895,
+      "lng": -122.326999,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjn9a6iylwj600000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "2c7d3400dafc5a3e38e16f4b1bb9dea4",
+      "createdAt": "2019-10-21T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "400",
+      "price": 207500,
+      "bedCount": 0,
+      "bathCount": 1,
+      "address": "E Bellevue Ave, San Mateo, CA 94401",
+      "lat": 37.57417,
+      "lng": -122.33317,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISvoinv4ziywpp1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "a6ed124c5d32d06c6e72ce1a48ee2b2d",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "800",
+      "price": 285000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "40 W 4th Ave APT 212, San Mateo, CA 94402",
+      "lat": 37.561711,
+      "lng": -122.326475,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISr9w0m5plii9u1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "81b65183f85ca66888b6a612ccbbcde5",
+      "createdAt": "2019-10-13T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "600",
+      "price": 230000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "1125 College Ave, San Mateo, CA 94401",
+      "lat": 37.581281,
+      "lng": -122.326124,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISqxqseyvu8n9l0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "720f4732f5b1bd7bab4147be3f356f8e",
+      "createdAt": "2019-10-11T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "1552",
+      "price": 400000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "250 W 20th Ave, San Mateo, CA 94403",
+      "lat": 37.547854,
+      "lng": -122.314009,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISibsgmt6jefin0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "43961acb439f08e43b8b2785bb18aa9d",
+      "createdAt": "2019-09-30T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "930",
+      "price": 285000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "619 N San Mateo Dr, San Mateo, CA 94401",
+      "lat": 37.574582,
+      "lng": -122.335777,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISb1jg1eex8bsx1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "ce0319916df9e322529958c78aa19637",
+      "createdAt": "2019-09-09T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "650",
+      "price": 235000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "70 41st Ave APT 3, San Mateo, CA 94403",
+      "lat": 37.530312,
+      "lng": -122.292204,
+      "images": [
+        "https://maps.googleapis.com/maps/api/staticmap?center=37.530312,-122.292204&zoom=17&size=575x242&maptype=satellite&key=AIzaSyBot9JtFX4Hqs-Ri6N3A8K1Rl5XZD3ssyI&signature=cdPSPoPWJ9ysIu7VQdFbn47MYQY="
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d6f3718f5bb3c87353751a9b7cbd1a1d",
+      "createdAt": "2019-08-29T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "165",
+      "price": 160000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "227 Ramona St # 5, San Mateo, CA 94401",
+      "lat": 37.571367,
+      "lng": -122.328632,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS7afw45r0e8fk0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d08317744cafd91abb3f112ae06c4dd0",
+      "createdAt": "2019-08-28T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "11210",
+      "price": 250000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "2049 S El Camino Real # 2063, San Mateo, CA 94403",
+      "lat": 37.547965,
+      "lng": -122.309025,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISnulfpe3ipkwd0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "eb2a5ceb33463add43804e1877e11b4f",
+      "createdAt": "2019-08-22T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "652",
+      "price": 282500,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "100 Dartmouth Rd, San Mateo, CA 94402",
+      "lat": 37.561069,
+      "lng": -122.327267,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/IS7aj74zjsqg2l1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "e9f1b1fb598fc1f0139eb47160dbdd50",
+      "createdAt": "2019-08-22T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "800",
+      "price": 250000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "E 39th Ave, San Mateo, CA 94403",
+      "lat": 37.533405,
+      "lng": -122.291778,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISfsq7u3n1havr0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "7a76885d80156e169e422031979c076b",
+      "createdAt": "2019-12-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "580",
+      "price": 383600,
+      "bedCount": 0,
+      "bathCount": 1,
+      "address": "Field House at Bay Meadows, C",
+      "lat": 37.543581,
+      "lng": -122.298177,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISe8nrn21qsp8l0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "5089677cf18c2fdbe75bdf5d89e32bf7",
+      "createdAt": "2019-07-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "651",
+      "price": 399000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "1025 Park Pl APT 328, San Mateo, CA 94403",
+      "lat": 37.545543,
+      "lng": -122.292972,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISv0cycsddd6v01000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "3ed31c249fde86a8110fcbad50415df8",
+      "createdAt": "2019-07-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "713",
+      "price": 399000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "1175 Park Pl APT 207, San Mateo, CA 94403",
+      "lat": 37.545555,
+      "lng": -122.292931,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISnels2sr3hl9u0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "03d77f7702b3063981e3270efee83153",
+      "createdAt": "2019-07-16T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "757",
+      "price": 245000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "3223 Glendora Dr APT 5, San Mateo, CA 94403",
+      "lat": 37.532179,
+      "lng": -122.326084,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISyzt6g83jwe4v1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "f637e5691b53ce9603749d1342bc4874",
+      "createdAt": "2019-07-02T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "900",
+      "price": 345000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "525 N El Camino Real, San Mateo, CA 94401",
+      "lat": 37.571495,
+      "lng": -122.338753,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISifbizck2ctrg1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "d052510cca20512daa316bb0251eb952",
+      "createdAt": "2019-06-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "602",
+      "price": 350000,
+      "bedCount": 1,
+      "bathCount": 1,
+      "address": "W 3rd Ave, San Mateo, CA 94402",
+      "lat": 37.56031,
+      "lng": -122.32906,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISi75wfrqt4mn11000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "fb14cc0a65a132675734d9a9190ef00b",
+      "createdAt": "2019-06-27T00:00:00.000Z",
+      "name": "Apartment for rent",
+      "description": "",
+      "floorArea": "780",
+      "price": 410000,
+      "bedCount": 2,
+      "bathCount": 1,
+      "address": "N Ellsworth Ave, San Mateo, CA 94401",
+      "lat": 37.56974,
+      "lng": -122.32776,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjzu6323ztdjf1000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    },
+    {
+      "key": "3aa94e76db3c1ffd4681c14b7291a738",
+      "createdAt": "2019-05-14T00:00:00.000Z",
+      "name": "Condo for rent",
+      "description": "",
+      "floorArea": "1475",
+      "price": 499000,
+      "bedCount": 2,
+      "bathCount": 2,
+      "address": "101 Arroyo Ct APT 8, San Mateo, CA 94402",
+      "lat": 37.562006,
+      "lng": -122.328233,
+      "images": [
+        "https://photos.zillowstatic.com/p_e/ISjju7fatpmy4j0000000000.jpg"
+      ],
+      "rentalStatus": "AVAILABLE"
+    }
+  ]
+}
