@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  TouchableWithoutFeedback,
-  Keyboard,
-  ScrollView,
-} from 'react-native';
+import { StyleSheet, Keyboard, ScrollView } from 'react-native';
 
 import { Button, TextInput, NumberInput } from '../components/core-ui';
 import useFormData from '../helpers/useFormData';
@@ -68,128 +62,121 @@ export default function PropertyEditForm(props: Props) {
     onSubmit(formData);
   };
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-      <View style={styles.container}>
-        <ScrollView
-          contentContainerStyle={styles.scrollViewContent}
-          keyboardShouldPersistTaps="always"
-        >
-          <TextInput
-            label="Name"
-            style={styles.formField}
-            autoFocus={true}
-            value={formData.name}
-            onChangeText={(text) => setFormData('name', text)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <TextInput
-            label="Description"
-            multiline={true}
-            style={styles.formField}
-            value={formData.description}
-            onChangeText={(text) => setFormData('description', text)}
-          />
-          <TextInput
-            label="Floor Area (square feet)"
-            style={styles.formField}
-            value={formData.floorArea}
-            onChangeText={(text) => setFormData('floorArea', text)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <NumberInput
-            label="Price"
-            style={styles.formField}
-            value={formData.price}
-            onChange={(value) => setFormData('price', value)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <NumberInput
-            label="Number of Bedrooms"
-            style={styles.formField}
-            value={formData.bedCount}
-            onChange={(value) => setFormData('bedCount', value)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <NumberInput
-            label="Number of Bathrooms"
-            style={styles.formField}
-            value={formData.bathCount}
-            onChange={(value) => setFormData('bathCount', value)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <TextInput
-            label="Address"
-            style={styles.formField}
-            value={formData.address}
-            onChangeText={(text) => setFormData('address', text)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <TextInput
-            label="Latitude, Longitude"
-            style={styles.formField}
-            value={formData.latLng}
-            onChangeText={(text) => setFormData('latLng', text)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <TextInput
-            label="Image"
-            style={styles.formField}
-            value={formData.images}
-            onChangeText={(text) => setFormData('images', text)}
-            returnKeyType="done"
-            onSubmitEditing={() => {
-              Keyboard.dismiss();
-            }}
-          />
-          <Dropdown
-            label="Rental Status"
-            values={statuses}
-            selectedValue={formData.rentalStatus}
-            keyExtractor={(status) => status}
-            titleExtractor={(status) => statusToLabel(status)}
-            onSelect={(status) => setFormData('rentalStatus', status)}
-            onShow={() => Keyboard.dismiss()}
-            style={styles.formField}
-          />
-          <Button
-            style={styles.formField}
-            loading={isLoading}
-            disabled={isLoading}
-            onPress={submitHandler}
-          >
-            Save
-          </Button>
-        </ScrollView>
-      </View>
-    </TouchableWithoutFeedback>
+    <ScrollView
+      contentContainerStyle={styles.scrollViewContent}
+      keyboardShouldPersistTaps="handled"
+    >
+      <TextInput
+        label="Name"
+        style={styles.formField}
+        autoFocus={true}
+        value={formData.name}
+        onChangeText={(text) => setFormData('name', text)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <TextInput
+        label="Description"
+        multiline={true}
+        style={styles.formField}
+        value={formData.description}
+        onChangeText={(text) => setFormData('description', text)}
+      />
+      <TextInput
+        label="Floor Area (square feet)"
+        style={styles.formField}
+        value={formData.floorArea}
+        onChangeText={(text) => setFormData('floorArea', text)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <NumberInput
+        label="Price"
+        style={styles.formField}
+        value={formData.price}
+        onChange={(value) => setFormData('price', value)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <NumberInput
+        label="Number of Bedrooms"
+        style={styles.formField}
+        value={formData.bedCount}
+        onChange={(value) => setFormData('bedCount', value)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <NumberInput
+        label="Number of Bathrooms"
+        style={styles.formField}
+        value={formData.bathCount}
+        onChange={(value) => setFormData('bathCount', value)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <TextInput
+        label="Address"
+        style={styles.formField}
+        value={formData.address}
+        onChangeText={(text) => setFormData('address', text)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <TextInput
+        label="Latitude, Longitude"
+        style={styles.formField}
+        value={formData.latLng}
+        onChangeText={(text) => setFormData('latLng', text)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <TextInput
+        label="Image"
+        style={styles.formField}
+        value={formData.images}
+        onChangeText={(text) => setFormData('images', text)}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          Keyboard.dismiss();
+        }}
+      />
+      <Dropdown
+        label="Rental Status"
+        values={statuses}
+        selectedValue={formData.rentalStatus}
+        keyExtractor={(status) => status}
+        titleExtractor={(status) => statusToLabel(status)}
+        onSelect={(status) => setFormData('rentalStatus', status)}
+        onShow={() => Keyboard.dismiss()}
+        style={styles.formField}
+      />
+      <Button
+        style={styles.formField}
+        loading={isLoading}
+        disabled={isLoading}
+        onPress={submitHandler}
+      >
+        Save
+      </Button>
+    </ScrollView>
   );
 }
 
 let styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   scrollViewContent: {
     padding: 40,
   },
