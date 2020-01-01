@@ -80,13 +80,19 @@ export default function DrawerContent(props: Props) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.profile}>
+      <TouchableOpacity
+        style={styles.profile}
+        onPress={() => {
+          navRef.current && navRef.current.navigate('MyProfile', undefined);
+          closeDrawer();
+        }}
+      >
         <Avatar.Text size={48} label={getInitials(currentUser.name)} />
         <View style={styles.profileDetails}>
           <Text style={styles.profileName}>{currentUser.name}</Text>
           <Text style={styles.profileEmail}>{currentUser.email}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
       <View style={styles.contentPane}>
         {buttons.map(({ icon, label, onPress, showForRoles }, i) =>
           showForRoles && !showForRoles.includes(role) ? null : (
