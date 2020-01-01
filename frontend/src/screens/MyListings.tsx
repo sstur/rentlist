@@ -45,9 +45,7 @@ export default function MyListings() {
         style={styles.floatingActionButton}
         icon="plus"
         onPress={() => {
-          navigation.navigate('PropertyCreate', {
-            refresh,
-          });
+          navigation.navigate('PropertyCreate', { refresh });
         }}
       />
     </View>
