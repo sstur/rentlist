@@ -1,9 +1,14 @@
 import React from 'react';
 import { Linking } from 'expo';
 import { useRoute, useNavigation } from '@react-navigation/native';
-import { View, StyleSheet, ScrollView, Alert } from 'react-native';
+import { View, StyleSheet, ScrollView, Alert, Keyboard } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-import { Text, FixedRatioImage, Link, Button } from '../components/core-ui';
+import {
+  Text,
+  FixedRatioImage,
+  Link,
+  HeaderDropdown,
+} from '../components/core-ui';
 import { RouteProp, NavigationProp } from '../types/Navigation';
 import {
   FONT_SIZE_SMALL,
@@ -11,92 +16,114 @@ import {
   FONT_BOLD,
   FONT_SIZE_LARGE,
 } from '../theme/theme';
+import * as Api from '../helpers/Api';
 import formatPrice from '../helpers/formatPrice';
-import { Property } from '../types/Property';
 import { useAuth } from '../components/AuthenticationProvider';
+import { ToastProvider, useToast } from '../components/ToastProvider';
 
 export default function PropertyDetails() {
   let { currentUser } = useAuth();
   let navigation = useNavigation<NavigationProp<'PropertyDetails'>>();
   let route = useRoute<RouteProp<'PropertyDetails'>>();
+  let [showToast, toastRef] = useToast();
   let { property, refresh } = route.params;
   let image = property.images.length ? property.images[0] : null;
   let defaultDescription = '(no description)';
-  return (
-    <ScrollView>
-      {image && (
-        <FixedRatioImage aspectRatio={1.875} source={{ uri: image.url }} />
-      )}
-      <View style={styles.detailsPane}>
-        <Text style={styles.smallTitle}>For Rent</Text>
-        <Text style={styles.price}>{formatPrice(property.price)}/mo</Text>
-        <Text style={styles.address}>{property.address}</Text>
-        <View style={styles.specsRow}>
-          <View style={styles.spec}>
-            <Icon name="floor-lamp" size={28} color="#bbb" />
-            <Text style={styles.specText}>{property.bedCount} bed</Text>
-          </View>
-          <View style={styles.spec}>
-            <Icon name="shower-head" size={28} color="#bbb" />
-            <Text style={styles.specText}>{property.bathCount} bath</Text>
-          </View>
-          <View style={styles.spec}>
-            <Icon name="arrow-expand" size={28} color="#bbb" />
-            <Text style={styles.specText}>{property.floorArea} sqft</Text>
-          </View>
-        </View>
-        <Text style={styles.sectionTitle}>Description</Text>
-        <Text style={styles.sectionValue}>
-          {property.description || defaultDescription}
-        </Text>
-        <Text style={styles.sectionTitle}>Listing Created</Text>
-        <Text style={styles.sectionValue}>
-          {new Date(property.createdAt).toLocaleDateString()}
-        </Text>
-        <Text style={styles.sectionTitle}>Contact Realtor</Text>
-        <View style={styles.sectionValue}>
-          <Text>{property.manager.name}</Text>
-          <Link onPress={() => contactRealtor(property)}>
-            {property.manager.email}
-          </Link>
-        </View>
-        {currentUser && currentUser.role !== 'USER' ? (
-          <Button
-            style={{
-              marginTop: 20,
-            }}
-            onPress={() => {
-              navigation.navigate('PropertyEdit', {
-                property,
-                refresh,
-              });
-            }}
-          >
-            Edit
-          </Button>
-        ) : null}
-      </View>
-    </ScrollView>
-  );
-}
-
-function contactRealtor(property: Property) {
-  Alert.alert(
-    'Contact Realtor',
-    'Press OK to contact this realtor by email. This will open your default mail app.',
-    [
-      { text: 'Cancel' },
-      {
-        text: 'OK',
-        onPress: async () => {
-          try {
-            await Linking.openURL(`mailto:${property.manager.email}`);
-          } catch (e) {
-            Alert.alert('Unable to open mail app.');
-          }
+  let onContactPress = () => {
+    Alert.alert(
+      'Contact Realtor',
+      'Press OK to contact this realtor by email. This will open your default mail app.',
+      [
+        { text: 'Cancel' },
+        {
+          text: 'OK',
+          onPress: contactRealtor,
         },
-      },
-    ],
+      ],
+    );
+  };
+  let contactRealtor = async () => {
+    try {
+      await Linking.openURL(`mailto:${property.manager.email}`);
+    } catch (e) {
+      showToast('Unable to open mail app.');
+    }
+  };
+  if (currentUser && currentUser.role !== 'USER') {
+    let onEditPress = () => {
+      navigation.navigate('PropertyEdit', {
+        property,
+        refresh,
+      });
+    };
+    let onDeletePress = () => {
+      Keyboard.dismiss();
+      Alert.alert(
+        'Delete',
+        'Press "Delete" to permanently delete this rental listing.',
+        [{ text: 'Cancel' }, { text: 'Delete', onPress: reallyDelete }],
+      );
+    };
+    let reallyDelete = async () => {
+      let result = await Api.deleteProperty(property.id);
+      if (result.success) {
+        refresh();
+        navigation.navigate('Home');
+      } else {
+        showToast('Request failed: ' + result.error);
+      }
+    };
+    navigation.setOptions({
+      headerRight: () => (
+        <HeaderDropdown
+          menu={[
+            { title: 'Edit', onPress: onEditPress },
+            { title: 'Delete', onPress: onDeletePress },
+          ]}
+        />
+      ),
+    });
+  }
+  return (
+    <ToastProvider ref={toastRef}>
+      <ScrollView>
+        {image && (
+          <FixedRatioImage aspectRatio={1.875} source={{ uri: image.url }} />
+        )}
+        <View style={styles.detailsPane}>
+          <Text style={styles.smallTitle}>For Rent</Text>
+          <Text style={styles.price}>{formatPrice(property.price)}/mo</Text>
+          <Text style={styles.address}>{property.address}</Text>
+          <View style={styles.specsRow}>
+            <View style={styles.spec}>
+              <Icon name="floor-lamp" size={28} color="#bbb" />
+              <Text style={styles.specText}>{property.bedCount} bed</Text>
+            </View>
+            <View style={styles.spec}>
+              <Icon name="shower-head" size={28} color="#bbb" />
+              <Text style={styles.specText}>{property.bathCount} bath</Text>
+            </View>
+            <View style={styles.spec}>
+              <Icon name="arrow-expand" size={28} color="#bbb" />
+              <Text style={styles.specText}>{property.floorArea} sqft</Text>
+            </View>
+          </View>
+          <Text style={styles.sectionTitle}>Description</Text>
+          <Text style={styles.sectionValue}>
+            {property.description || defaultDescription}
+          </Text>
+          <Text style={styles.sectionTitle}>Listing Created</Text>
+          <Text style={styles.sectionValue}>
+            {new Date(property.createdAt).toLocaleDateString()}
+          </Text>
+          <Text style={styles.sectionTitle}>Contact Realtor</Text>
+          <View style={styles.sectionValue}>
+            <Text>{property.manager.name}</Text>
+            <Link onPress={onContactPress}>{property.manager.email}</Link>
+          </View>
+        </View>
+      </ScrollView>
+    </ToastProvider>
   );
 }
 

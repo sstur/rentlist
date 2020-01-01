@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Keyboard, Alert } from 'react-native';
+import { Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { useRoute } from '@react-navigation/native';
 
@@ -27,32 +27,12 @@ export default function PropertyEdit() {
       showToast('Save failed: ' + result.error);
     }
   };
-  let onDelete = async () => {
-    Keyboard.dismiss();
-    Alert.alert(
-      'Delete',
-      'Press "Delete" to permanently delete this rental listing.',
-      [{ text: 'Cancel' }, { text: 'Delete', onPress: reallyDelete }],
-    );
-  };
-  let reallyDelete = async () => {
-    setLoading(true);
-    let result = await Api.deleteProperty(property.id);
-    if (result.success) {
-      refresh();
-      navigation.navigate('Home');
-    } else {
-      setLoading(false);
-      showToast('Request failed: ' + result.error);
-    }
-  };
   return (
     <ToastProvider ref={toastRef}>
       <PropertyEditForm
         property={property}
         isLoading={isLoading}
         onSubmit={onSubmit}
-        onDelete={onDelete}
       />
     </ToastProvider>
   );

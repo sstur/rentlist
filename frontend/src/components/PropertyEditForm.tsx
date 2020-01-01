@@ -17,11 +17,10 @@ type Props = {
   property?: Property;
   isLoading: boolean;
   onSubmit: (data: PropertyInput) => void;
-  onDelete?: () => void;
 };
 
 export default function PropertyEditForm(props: Props) {
-  let { property, isLoading, onSubmit, onDelete } = props;
+  let { property, isLoading, onSubmit } = props;
   let initialData: PropertyInput;
   if (property) {
     let {
@@ -181,11 +180,6 @@ export default function PropertyEditForm(props: Props) {
           >
             Save
           </Button>
-          {onDelete && (
-            <Button color="#E1545F" onPress={onDelete}>
-              Delete
-            </Button>
-          )}
         </ScrollView>
       </View>
     </TouchableWithoutFeedback>
